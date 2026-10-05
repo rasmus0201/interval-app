@@ -1,5 +1,8 @@
 .DS_Store
 DerivedData/
+.build/
 .worktrees/
 xcuserdata/
 *.xcuserstate
+.impeccable/build/
+.impeccable/review/

@@ -52,6 +52,7 @@ No brand assets, customer evidence, or visual references were provided. The prod
 
 ## Product Principles
 
+- Keep setup simple, clean, and quick to scan.
 - Make the next action obvious.
 - Keep active timing legible at a distance.
 - Give clear phase-change feedback through more than one sense.

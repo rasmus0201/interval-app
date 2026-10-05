@@ -1,0 +1,10 @@
+Use case: ui-mockup
+Asset type: high-fidelity iPhone app design comp, portrait
+Primary request: Design the first screen of a native iOS interval workout timer named Interval. This is option C, a compact sequence-led setup. Use a standard iOS large navigation title "Træning". Directly below, show one simple horizontal phase sequence with text labels and times: "Arbejde 00:45" then a thin arrow then "Hvile 00:15", repeated visually only once as a clear pattern, with a second quiet line "8 gentagelser · 3 runder · 01:00 rundepause". Below that, use a standard iOS inset grouped form with four editable rows: "Arbejde", "Hvile", "Gentagelser", "Runder", and a separate optional row "Rundepause". Place one short summary "18 min i alt" above one wide primary button "Start træning". Use a native tab bar with "Træning" selected and "Historik" unselected. Do not show a phone hardware frame.
+Style/medium: realistic polished native SwiftUI interface, very simple and clean, calm native utility, generous spacing
+Composition/framing: full iPhone portrait viewport, safe areas respected, sequence is compact and informative, form remains primary
+Color palette: iOS semantic light background, dark labels, system-orange only for work and primary action, system-blue only for rest
+Materials/textures: flat native iOS surfaces, no texture
+Text (verbatim): "Træning", "Arbejde", "00:45", "Hvile", "00:15", "8 gentagelser · 3 runder · 01:00 rundepause", "Gentagelser", "Runder", "Rundepause", "18 min i alt", "Start træning", "Historik"
+Constraints: Danish UI; no gradients; no custom cards; no charts; no marketing copy; no logos; no invented features; use SF Symbols only for tab icons; keep every control obviously tappable; accessibility-sized text; portrait 9:19.5 composition
+Avoid: dashboard density, glassmorphism, neon, shadows, decorative illustration, tiny text, floating cards, excessive borders, phone mockup frame
