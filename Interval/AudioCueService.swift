@@ -25,7 +25,7 @@ final class AudioCueService {
         guard let url = Bundle.main.url(forResource: Cue.silence.rawValue, withExtension: "wav") else { return }
         backgroundPlayer = try? AVAudioPlayer(contentsOf: url)
         backgroundPlayer?.numberOfLoops = -1
-        backgroundPlayer?.volume = 0
+        backgroundPlayer?.volume = 1
         backgroundPlayer?.prepareToPlay()
         backgroundPlayer?.play()
     }
@@ -55,6 +55,7 @@ final class AudioCueService {
     private func playTone(_ cue: Cue) {
         guard let url = Bundle.main.url(forResource: cue.rawValue, withExtension: "wav") else { return }
         cuePlayer = try? AVAudioPlayer(contentsOf: url)
+        cuePlayer?.volume = 1
         cuePlayer?.prepareToPlay()
         cuePlayer?.play()
     }
