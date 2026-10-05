@@ -2,6 +2,10 @@
 
 Kyclaro is a native iPhone interval timer built with SwiftUI.
 
+## Name
+
+Kyclaro combines the Greek *kyklos* (cycle) with *claro* (clear). The name reflects the app's purpose: to make repeated work and rest cycles clear through time, sound, vibration, and the Lock Screen. The App Store name is **Kyclaro Timer**, while the shorter **Kyclaro** appears below the app icon on the Home Screen.
+
 ## Run
 
 1. Open `Interval.xcodeproj` in Xcode.
