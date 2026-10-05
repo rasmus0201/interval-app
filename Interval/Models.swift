@@ -35,10 +35,30 @@ struct AppSettings: Codable, Equatable {
             case .tonesAndVibration: "Bip + vibration"
             }
         }
+
+        var usesTones: Bool {
+            self == .tones || self == .tonesAndVibration
+        }
     }
 
     var startCountdownSeconds = 10
     var feedback = Feedback.tones
+    var cueVolume = 1.0
+
+    private enum CodingKeys: String, CodingKey {
+        case startCountdownSeconds
+        case feedback
+        case cueVolume
+    }
+
+    init() {}
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        startCountdownSeconds = try container.decodeIfPresent(Int.self, forKey: .startCountdownSeconds) ?? 10
+        feedback = try container.decodeIfPresent(Feedback.self, forKey: .feedback) ?? .tones
+        cueVolume = try container.decodeIfPresent(Double.self, forKey: .cueVolume) ?? 1
+    }
 }
 
 struct WorkoutHistoryEntry: Codable, Identifiable, Equatable {

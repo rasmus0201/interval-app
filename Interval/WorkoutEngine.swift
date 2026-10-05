@@ -177,21 +177,29 @@ final class WorkoutEngine: ObservableObject {
 
         if newRemaining <= 3, newRemaining > 0, lastCountdownCue != newRemaining {
             lastCountdownCue = newRemaining
-            AudioCueService.shared.play(.blop, feedback: settings.feedback)
+            play(.blop)
         }
     }
 
     private func playTransitionCue(for phase: WorkoutPhase, previousPhase: WorkoutPhase?) {
         switch phase {
         case .warmup:
-            AudioCueService.shared.play(.blop, feedback: settings.feedback)
+            play(.blop)
         case .work where previousPhase == .rest || previousPhase == .roundRest:
-            AudioCueService.shared.play(.restEnded, feedback: settings.feedback)
+            play(.restEnded)
         case .work:
-            AudioCueService.shared.play(.start, feedback: settings.feedback)
+            play(.start)
         case .rest, .roundRest:
-            AudioCueService.shared.play(.workEnded, feedback: settings.feedback)
+            play(.workEnded)
         }
+    }
+
+    private func play(_ cue: AudioCueService.Cue) {
+        AudioCueService.shared.play(
+            cue,
+            feedback: settings.feedback,
+            volume: settings.cueVolume
+        )
     }
 
     private func complete() {
@@ -200,7 +208,7 @@ final class WorkoutEngine: ObservableObject {
         remainingSeconds = 0
         stopTimer()
         UIApplication.shared.isIdleTimerDisabled = false
-        AudioCueService.shared.play(.complete, feedback: settings.feedback)
+        play(.complete)
         Task { await WorkoutLiveActivityService.shared.end() }
     }
 }

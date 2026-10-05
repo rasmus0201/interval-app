@@ -38,24 +38,24 @@ final class AudioCueService {
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 
-    func play(_ cue: Cue, feedback: AppSettings.Feedback) {
+    func play(_ cue: Cue, feedback: AppSettings.Feedback, volume: Double) {
         switch feedback {
         case .silent:
             return
         case .vibration:
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         case .tones:
-            playTone(cue)
+            playTone(cue, volume: volume)
         case .tonesAndVibration:
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-            playTone(cue)
+            playTone(cue, volume: volume)
         }
     }
 
-    private func playTone(_ cue: Cue) {
+    private func playTone(_ cue: Cue, volume: Double) {
         guard let url = Bundle.main.url(forResource: cue.rawValue, withExtension: "wav") else { return }
         cuePlayer = try? AVAudioPlayer(contentsOf: url)
-        cuePlayer?.volume = 1
+        cuePlayer?.volume = Float(min(max(volume, 0), 1))
         cuePlayer?.prepareToPlay()
         cuePlayer?.play()
     }

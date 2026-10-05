@@ -83,4 +83,22 @@ final class WorkoutTimelineTests: XCTestCase {
         reloadedStore.load(reloadedStore.history[0])
         XCTAssertEqual(reloadedStore.configuration, configuration)
     }
+
+    @MainActor
+    func testLoadsSettingsSavedBeforeCueVolumeWasAdded() throws {
+        let suiteName = "WorkoutTimelineTests.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+        let legacySettings = try JSONSerialization.data(withJSONObject: [
+            "startCountdownSeconds": 30,
+            "feedback": "vibration"
+        ])
+        defaults.set(legacySettings, forKey: "appSettings")
+
+        let store = AppStore(defaults: defaults)
+
+        XCTAssertEqual(store.settings.startCountdownSeconds, 30)
+        XCTAssertEqual(store.settings.feedback, .vibration)
+        XCTAssertEqual(store.settings.cueVolume, 1)
+    }
 }

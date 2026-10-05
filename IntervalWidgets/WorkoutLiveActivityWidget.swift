@@ -13,11 +13,14 @@ struct WorkoutLiveActivityWidget: Widget {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
-                Spacer()
                 countdown(context.state)
                     .font(.title.bold().monospacedDigit())
+                    .fixedSize(horizontal: true, vertical: false)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .padding()
+            .padding(.leading, 16)
+            .padding(.trailing, 20)
+            .padding(.vertical, 16)
             .activityBackgroundTint(phaseColor(context.state.phase).opacity(0.18))
             .activitySystemActionForegroundColor(phaseColor(context.state.phase))
         } dynamicIsland: { context in
@@ -29,6 +32,7 @@ struct WorkoutLiveActivityWidget: Widget {
                 DynamicIslandExpandedRegion(.trailing) {
                     countdown(context.state)
                         .font(.headline.monospacedDigit())
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     Text(detailText(context))
@@ -40,7 +44,7 @@ struct WorkoutLiveActivityWidget: Widget {
             } compactTrailing: {
                 countdown(context.state)
                     .monospacedDigit()
-                    .frame(width: 48)
+                    .frame(width: 48, alignment: .trailing)
             } minimal: {
                 Image(systemName: phaseSymbol(context.state.phase))
                     .foregroundStyle(phaseColor(context.state.phase))

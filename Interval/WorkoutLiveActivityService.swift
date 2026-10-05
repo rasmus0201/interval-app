@@ -6,10 +6,13 @@ final class WorkoutLiveActivityService {
     static let shared = WorkoutLiveActivityService()
 
     private var activity: Activity<WorkoutActivityAttributes>?
+    private var startTask: Task<Void, Never>?
 
     func start(step: WorkoutStep, configuration: WorkoutConfiguration, remainingSeconds: Int) {
-        Task {
-            await end()
+        let previousStartTask = startTask
+        startTask = Task {
+            await previousStartTask?.value
+            await endActiveActivities()
             guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
 
             let attributes = WorkoutActivityAttributes(
@@ -18,29 +21,33 @@ final class WorkoutLiveActivityService {
             )
             let content = ActivityContent(
                 state: state(step: step, remainingSeconds: remainingSeconds, isPaused: false),
-                staleDate: Date.now.addingTimeInterval(TimeInterval(remainingSeconds + 5))
+                staleDate: Date.now.addingTimeInterval(TimeInterval(remainingSeconds + 5)),
+                relevanceScore: 100
             )
             activity = try? Activity.request(attributes: attributes, content: content)
         }
     }
 
     func update(step: WorkoutStep, remainingSeconds: Int, isPaused: Bool) {
-        guard let activity else { return }
         let content = ActivityContent(
             state: state(step: step, remainingSeconds: remainingSeconds, isPaused: isPaused),
-            staleDate: isPaused ? nil : Date.now.addingTimeInterval(TimeInterval(remainingSeconds + 5))
+            staleDate: isPaused ? nil : Date.now.addingTimeInterval(TimeInterval(remainingSeconds + 5)),
+            relevanceScore: 100
         )
-        Task { await activity.update(content) }
+        let pendingStart = startTask
+        Task {
+            await pendingStart?.value
+            guard let activeActivity else { return }
+            await activeActivity.update(content)
+            activity = activeActivity
+        }
     }
 
     func end() async {
-        guard let activity else { return }
-        let finalContent = ActivityContent(
-            state: activity.content.state,
-            staleDate: nil
-        )
-        await activity.end(finalContent, dismissalPolicy: .immediate)
-        self.activity = nil
+        let pendingStart = startTask
+        startTask = nil
+        await pendingStart?.value
+        await endActiveActivities()
     }
 
     private func state(
@@ -56,5 +63,27 @@ final class WorkoutLiveActivityService {
             round: step.round,
             isPaused: isPaused
         )
+    }
+
+    private var activeActivity: Activity<WorkoutActivityAttributes>? {
+        if let activity, activity.activityState == .active || activity.activityState == .stale {
+            return activity
+        }
+        return Activity<WorkoutActivityAttributes>.activities.first {
+            $0.activityState == .active || $0.activityState == .stale
+        }
+    }
+
+    private func endActiveActivities() async {
+        let activities = Activity<WorkoutActivityAttributes>.activities
+        for activity in activities {
+            let finalContent = ActivityContent(
+                state: activity.content.state,
+                staleDate: nil,
+                relevanceScore: 0
+            )
+            await activity.end(finalContent, dismissalPolicy: .immediate)
+        }
+        activity = nil
     }
 }

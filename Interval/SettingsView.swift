@@ -25,10 +25,23 @@ struct SettingsView: View {
                         }
                     }
                     .pickerStyle(.inline)
+
+                    VStack(spacing: 8) {
+                        HStack {
+                            Text("Signalstyrke")
+                            Spacer()
+                            Text(store.settings.cueVolume, format: .percent.precision(.fractionLength(0)))
+                                .foregroundStyle(.secondary)
+                                .monospacedDigit()
+                        }
+                        Slider(value: $store.settings.cueVolume, in: 0...1, step: 0.05)
+                            .accessibilityLabel("Signalstyrke")
+                    }
+                    .disabled(!store.settings.feedback.usesTones)
                 } header: {
                     Text("Træningsfeedback")
                 } footer: {
-                    Text("Biptoner afspilles også, når telefonen er låst eller på lydløs. Vibration følger enhedens indstillinger.")
+                    Text("100 % bruger telefonens fulde medielydstyrke. Biptoner afspilles også, når telefonen er låst eller på lydløs.")
                 }
             }
             .navigationTitle("Indstillinger")
