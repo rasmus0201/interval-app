@@ -119,4 +119,18 @@ final class WorkoutTimelineTests: XCTestCase {
         XCTAssertEqual(store.settings.feedback, .vibration)
         XCTAssertEqual(store.settings.cueVolume, 1)
     }
+
+    func testSoundAndVibrationCanBeConfiguredIndependently() {
+        var settings = AppSettings()
+
+        settings.tonesEnabled = false
+        settings.vibrationEnabled = true
+        XCTAssertEqual(settings.feedback, .vibration)
+
+        settings.tonesEnabled = true
+        XCTAssertEqual(settings.feedback, .tonesAndVibration)
+
+        settings.vibrationEnabled = false
+        XCTAssertEqual(settings.feedback, .tones)
+    }
 }

@@ -11,22 +11,27 @@ struct WorkoutLiveActivityContent: View {
     var body: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 2) {
-                Label("Træning", systemImage: "figure.run")
-                    .font(.headline)
+                HStack(spacing: 8) {
+                    Image(systemName: "figure.run")
+                    Text("Træning")
+                }
+                .font(.headline)
                 Text("\(rounds) runder · \(repetitions) gentagelser")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
             }
-            Spacer(minLength: 8)
+            .frame(maxWidth: .infinity, alignment: .leading)
+
             countdown
                 .font(.title.bold().monospacedDigit())
-                .fixedSize(horizontal: true, vertical: false)
-                .layoutPriority(1)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(width: 96, alignment: .trailing)
         }
+        .frame(maxWidth: .infinity)
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
-        .frame(height: 68)
     }
 
     @ViewBuilder
@@ -36,12 +41,7 @@ struct WorkoutLiveActivityContent: View {
         } else if isPaused {
             Text(timerText(remainingSeconds))
         } else {
-            Text(
-                timerInterval: endsAt.addingTimeInterval(
-                    -TimeInterval(max(remainingSeconds, 1))
-                )...endsAt,
-                countsDown: true
-            )
+            Text(endsAt, style: .timer)
         }
     }
 

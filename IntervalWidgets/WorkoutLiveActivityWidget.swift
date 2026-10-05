@@ -24,7 +24,7 @@ struct WorkoutLiveActivityWidget: Widget {
                 DynamicIslandExpandedRegion(.trailing) {
                     countdown(context)
                         .font(.headline.monospacedDigit())
-                        .fixedSize(horizontal: true, vertical: false)
+                        .frame(width: 72, alignment: .trailing)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     Text("\(context.attributes.rounds) runder · \(context.attributes.repetitions) gentagelser")
@@ -51,12 +51,7 @@ struct WorkoutLiveActivityWidget: Widget {
         } else if context.state.isPaused {
             Text(timerText(context.state.remainingSeconds))
         } else {
-            Text(
-                timerInterval: context.state.endsAt.addingTimeInterval(
-                    -TimeInterval(max(context.state.remainingSeconds, 1))
-                )...context.state.endsAt,
-                countsDown: true
-            )
+            Text(context.state.endsAt, style: .timer)
         }
     }
 

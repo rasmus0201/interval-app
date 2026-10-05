@@ -17,6 +17,8 @@ struct RootView: View {
 #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("--live-activity-layout-test") {
             LiveActivityLayoutTestView()
+        } else if ProcessInfo.processInfo.arguments.contains("--settings-layout-test") {
+            SettingsView()
         } else {
             appContent
         }

@@ -34,7 +34,8 @@ The user holds, props up, or keeps an iPhone locked in a pocket during a workout
 - Optionally configure a pause between rounds.
 - Start, pause, resume, skip, and reset a workout.
 - Configure a global start countdown of 0, 10, 30, or 60 seconds.
-- Configure global workout feedback as silent, vibration, or tones.
+- Configure workout tones and vibration independently.
+- Configure tone volume relative to the phone's media volume.
 - Play distinct countdown tones when work starts, work ends, and rest ends.
 - Provide a short vibration or sound cue during the workout where useful.
 - Show the current phase, countdown, repetition, round, and progress.

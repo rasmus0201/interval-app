@@ -19,29 +19,29 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Picker("Feedback", selection: $store.settings.feedback) {
-                        ForEach(AppSettings.Feedback.allCases) { feedback in
-                            Text(feedback.title).tag(feedback)
-                        }
-                    }
-                    .pickerStyle(.inline)
+                    Toggle("Biplyde", isOn: $store.settings.tonesEnabled)
 
-                    VStack(spacing: 8) {
-                        HStack {
-                            Text("Signalstyrke")
-                            Spacer()
-                            Text(store.settings.cueVolume, format: .percent.precision(.fractionLength(0)))
-                                .foregroundStyle(.secondary)
-                                .monospacedDigit()
+                    if store.settings.tonesEnabled {
+                        VStack(spacing: 8) {
+                            HStack {
+                                Text("Lydstyrke")
+                                Spacer()
+                                Text(store.settings.cueVolume, format: .percent.precision(.fractionLength(0)))
+                                    .foregroundStyle(.secondary)
+                                    .monospacedDigit()
+                            }
+                            Slider(value: $store.settings.cueVolume, in: 0...1, step: 0.05)
+                                .accessibilityLabel("Lydstyrke")
                         }
-                        Slider(value: $store.settings.cueVolume, in: 0...1, step: 0.05)
-                            .accessibilityLabel("Signalstyrke")
                     }
-                    .disabled(!store.settings.feedback.usesTones)
                 } header: {
-                    Text("Træningsfeedback")
+                    Text("Lyd")
                 } footer: {
                     Text("100 % bruger telefonens fulde medielydstyrke. Biptoner afspilles også, når telefonen er låst eller på lydløs.")
+                }
+
+                Section("Vibration") {
+                    Toggle("Vibration", isOn: $store.settings.vibrationEnabled)
                 }
             }
             .navigationTitle("Indstillinger")

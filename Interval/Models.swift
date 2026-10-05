@@ -39,11 +39,34 @@ struct AppSettings: Codable, Equatable {
         var usesTones: Bool {
             self == .tones || self == .tonesAndVibration
         }
+
+        var usesVibration: Bool {
+            self == .vibration || self == .tonesAndVibration
+        }
+
+        init(usesTones: Bool, usesVibration: Bool) {
+            switch (usesTones, usesVibration) {
+            case (false, false): self = .silent
+            case (false, true): self = .vibration
+            case (true, false): self = .tones
+            case (true, true): self = .tonesAndVibration
+            }
+        }
     }
 
     var startCountdownSeconds = 10
     var feedback = Feedback.tones
     var cueVolume = 1.0
+
+    var tonesEnabled: Bool {
+        get { feedback.usesTones }
+        set { feedback = Feedback(usesTones: newValue, usesVibration: vibrationEnabled) }
+    }
+
+    var vibrationEnabled: Bool {
+        get { feedback.usesVibration }
+        set { feedback = Feedback(usesTones: tonesEnabled, usesVibration: newValue) }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case startCountdownSeconds
