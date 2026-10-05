@@ -1,4 +1,4 @@
-# Interval iOS Surface
+# Kyclaro iOS Surface
 
 ## Direction contract
 

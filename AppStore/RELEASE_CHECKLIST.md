@@ -2,13 +2,12 @@
 
 ## Før arkivering
 
-- Vælg det endelige appnavn og opdater `CFBundleDisplayName` i `Interval/Info.plist`.
+- Kontroller, at appnavnet Kyclaro er tilgængeligt i App Store Connect.
 - Erstat `APP_BUNDLE_ID` i projektets Build Settings med et entydigt ID, som udgiveren ejer.
 - Vælg udgiverens Apple Developer-team for app- og widget-targets i Xcode.
 - Opdater udgiverens juridiske navn i `AppStore/da-DK.md`.
 - Publicer `docs/` med GitHub Pages, og kontroller alle tre webadresser.
 - Øg `CURRENT_PROJECT_VERSION` for hver upload til App Store Connect.
-- Kontroller appnavnets tilgængelighed i App Store Connect.
 - Test en Release-build på mindst én fysisk iPhone med låst skærm.
 - Kontroller lyd, vibration, Live Activity og afslutning af en fuld træning.
 

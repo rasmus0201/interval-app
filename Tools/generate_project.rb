@@ -49,7 +49,7 @@ shared_activity_content_reference = widget_group.new_file("../Interval/WorkoutLi
 widget_target.source_build_phase.add_file_reference(shared_activity_content_reference)
 
 project.build_configurations.each do |configuration|
-  configuration.build_settings["APP_BUNDLE_ID"] = "com.bundsgaard.interval"
+  configuration.build_settings["APP_BUNDLE_ID"] = "com.bundsgaard.kyclaro"
   configuration.build_settings["MARKETING_VERSION"] = "1.0"
   configuration.build_settings["CURRENT_PROJECT_VERSION"] = "1"
 end

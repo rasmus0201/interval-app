@@ -2,19 +2,17 @@
 
 ## Navn
 
-`Interval`
-
-Erstat navnet, når det endelige navn er valgt. Navnet må højst være 30 tegn.
+`Kyclaro Timer`
 
 ## Undertitel
 
-`En enkel timer til din træning`
+`Enkle intervaller til træning`
 
 ## Beskrivelse
 
 Byg din intervaltræning på få sekunder. Vælg arbejdstid, antal øvelser, hviletid og runder. Start træningen, læg telefonen i lommen, og følg skiftene med tydelige lyd- og vibrationssignaler.
 
-Interval viser den aktive træning på låseskærmen og i Dynamic Island. Timeren fortsætter, når skærmen er låst, så du kan holde fokus på træningen.
+Kyclaro viser den aktive træning på låseskærmen og i Dynamic Island. Timeren fortsætter, når skærmen er låst, så du kan holde fokus på træningen.
 
 Funktioner:
 
@@ -67,4 +65,4 @@ Træningshistorik og indstillinger gemmes kun på enheden. Der kræves ingen dem
 
 ## Version 1.0 – Nyt i denne version
 
-Første version af Interval med konfigurerbare træningsintervaller, lyd og vibration, historik og Live Activity.
+Første version af Kyclaro med konfigurerbare træningsintervaller, lyd og vibration, historik og Live Activity.

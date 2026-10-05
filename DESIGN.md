@@ -2,7 +2,7 @@
 
 ## Visual World
 
-Interval uses the quiet visual discipline of an athletics timing board. The interface feels precise and readable at distance. Large tabular time, strict alignment, generous spacing, and persistent phase color make the workout state clear without decoration. Setup stays as close as possible to a clean native iOS form.
+Kyclaro uses the quiet visual discipline of an athletics timing board. The interface feels precise and readable at distance. Large tabular time, strict alignment, generous spacing, and persistent phase color make the workout state clear without decoration. Setup stays as close as possible to a clean native iOS form.
 
 ## Color
 

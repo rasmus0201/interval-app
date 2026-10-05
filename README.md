@@ -1,6 +1,6 @@
-# Interval
+# Kyclaro
 
-Interval is a native iPhone interval timer built with SwiftUI.
+Kyclaro is a native iPhone interval timer built with SwiftUI.
 
 ## Run
 
@@ -8,7 +8,7 @@ Interval is a native iPhone interval timer built with SwiftUI.
 2. Select an iPhone simulator.
 3. Run the `Interval` scheme.
 
-The default bundle identifier is `com.bundsgaard.interval`. Change `APP_BUNDLE_ID` once in the project Build Settings before another Apple Developer account publishes the app. The app, tests, and widget derive their identifiers from this value. No development team is stored in the project.
+The default bundle identifier is `com.bundsgaard.kyclaro`. Change `APP_BUNDLE_ID` once in the project Build Settings before another Apple Developer account publishes the app. The app, tests, and widget derive their identifiers from this value. No development team is stored in the project.
 
 ## Lock-screen timing
 

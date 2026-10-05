@@ -16,7 +16,7 @@ People who run interval workouts and need to read and control a timer while movi
 
 ## Product Purpose
 
-Interval makes a workout timer quick to configure and easy to follow at a glance. Success means a person can start a useful session in seconds, keep the phone locked in a pocket, and still understand phase changes through sound and vibration.
+Kyclaro makes a workout timer quick to configure and easy to follow at a glance. Success means a person can start a useful session in seconds, keep the phone locked in a pocket, and still understand phase changes through sound and vibration.
 
 ## Positioning
 
@@ -49,7 +49,7 @@ The user holds, props up, or keeps an iPhone locked in a pocket during a workout
 
 ## Evidence on Hand
 
-No brand assets, customer evidence, or visual references were provided. The product name is Interval. Future work must not invent commercial claims.
+No customer evidence or visual references were provided. The product name is Kyclaro. Future work must not invent commercial claims.
 
 ## Product Principles
 
