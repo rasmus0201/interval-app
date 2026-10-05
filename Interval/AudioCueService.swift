@@ -57,6 +57,7 @@ final class AudioCueService {
 
     private func playVibration(for cue: Cue) {
         vibrationTask?.cancel()
+        guard cue != .blop else { return }
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
 
         guard cue == .restEnded else { return }
