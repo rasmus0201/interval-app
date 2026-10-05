@@ -19,7 +19,7 @@ test_group = project.main_group.new_group("IntervalTests", "IntervalTests")
 widget_group = project.main_group.new_group("IntervalWidgets", "IntervalWidgets")
 
 source_paths = Dir.glob("Interval/*.swift").sort
-resource_paths = ["Interval/Assets.xcassets"] + Dir.glob("Interval/Sounds/*.wav").sort
+resource_paths = ["Interval/Assets.xcassets", "Interval/PrivacyInfo.xcprivacy"] + Dir.glob("Interval/Sounds/*.wav").sort
 test_paths = Dir.glob("IntervalTests/*.swift").sort
 widget_paths = Dir.glob("IntervalWidgets/*.swift").sort
 
@@ -45,9 +45,17 @@ end
 
 shared_activity_reference = widget_group.new_file("../Interval/WorkoutActivityAttributes.swift")
 widget_target.source_build_phase.add_file_reference(shared_activity_reference)
+shared_activity_content_reference = widget_group.new_file("../Interval/WorkoutLiveActivityContent.swift")
+widget_target.source_build_phase.add_file_reference(shared_activity_content_reference)
+
+project.build_configurations.each do |configuration|
+  configuration.build_settings["APP_BUNDLE_ID"] = "com.bundsgaard.interval"
+  configuration.build_settings["MARKETING_VERSION"] = "1.0"
+  configuration.build_settings["CURRENT_PROJECT_VERSION"] = "1"
+end
 
 app_target.build_configurations.each do |configuration|
-  configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.bundsgaard.interval"
+  configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "$(APP_BUNDLE_ID)"
   configuration.build_settings["INFOPLIST_FILE"] = "Interval/Info.plist"
   configuration.build_settings["GENERATE_INFOPLIST_FILE"] = "NO"
   configuration.build_settings["ASSETCATALOG_COMPILER_APPICON_NAME"] = "AppIcon"
@@ -59,7 +67,7 @@ app_target.build_configurations.each do |configuration|
 end
 
 test_target.build_configurations.each do |configuration|
-  configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.bundsgaard.interval.tests"
+  configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "$(APP_BUNDLE_ID).tests"
   configuration.build_settings["GENERATE_INFOPLIST_FILE"] = "YES"
   configuration.build_settings["CODE_SIGN_STYLE"] = "Automatic"
   configuration.build_settings["DEVELOPMENT_TEAM"] = ""
@@ -69,7 +77,7 @@ test_target.build_configurations.each do |configuration|
 end
 
 widget_target.build_configurations.each do |configuration|
-  configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.bundsgaard.interval.widgets"
+  configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "$(APP_BUNDLE_ID).widgets"
   configuration.build_settings["INFOPLIST_FILE"] = "IntervalWidgets/Info.plist"
   configuration.build_settings["GENERATE_INFOPLIST_FILE"] = "NO"
   configuration.build_settings["CODE_SIGN_STYLE"] = "Automatic"

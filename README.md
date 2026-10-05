@@ -8,7 +8,7 @@ Interval is a native iPhone interval timer built with SwiftUI.
 2. Select an iPhone simulator.
 3. Run the `Interval` scheme.
 
-The app uses the bundle identifier `com.bundsgaard.interval`. No development team is stored in the project. Xcode can assign a personal team when a physical device build needs signing.
+The default bundle identifier is `com.bundsgaard.interval`. Change `APP_BUNDLE_ID` once in the project Build Settings before another Apple Developer account publishes the app. The app, tests, and widget derive their identifiers from this value. No development team is stored in the project.
 
 ## Lock-screen timing
 
@@ -22,3 +22,9 @@ Run these commands after adding source files or changing bundled resources:
 swift Tools/generate_sounds.swift
 ruby Tools/generate_project.rb
 ```
+
+## App Store release
+
+The `AppStore` directory contains Danish metadata and a release checklist. The app includes a privacy manifest and does not collect data. Version and build numbers use `MARKETING_VERSION` and `CURRENT_PROJECT_VERSION` in the project Build Settings.
+
+The static landing page is in `docs`. The GitHub Pages workflow publishes it from `main` after Pages is enabled with **GitHub Actions** as its source. Replace the publisher's legal name before the App Store submission.

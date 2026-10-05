@@ -8,7 +8,7 @@ ios
 
 ## Stack
 
-Native SwiftUI with Swift 6, using Apple frameworks only. The bundle identifier uses the `com.bundsgaard` namespace. The project must not use a Medware development team or signing profile.
+Native SwiftUI with Swift 6, using Apple frameworks only. The default bundle identifier uses the `com.bundsgaard` namespace and can be replaced through the shared `APP_BUNDLE_ID` build setting. The project must not use a Medware development team or signing profile.
 
 ## Users
 

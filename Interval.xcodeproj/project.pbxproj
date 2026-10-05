@@ -7,63 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09FB9C0482DC8C068ED043A9 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5201D00290F8EDAD0B55E8EE /* WorkoutView.swift */; };
-		13E54CD1F9399D76AD80D5AD /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA32503C9E4CFF9C871F5113 /* Models.swift */; };
-		317D118403B94EBD38991533 /* complete-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3C81E957C1FA17E21F2B271 /* complete-signal.wav */; };
-		3BC21AA1DE5BFB78C76A298C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBC2A5DC0B0C550290C330B /* RootView.swift */; };
-		502D73286906EC96D339E623 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8163BFE48FA81C213F5B9 /* Foundation.framework */; };
-		51417D939A0CA60BB1D88149 /* start-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B9F882D990E39C8A82F2B75 /* start-signal.wav */; };
-		676895593673089377082013 /* WorkoutActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C251E6F6EB1432529C6DE /* WorkoutActivityAttributes.swift */; };
-		6D1AC1979547A391F73740A1 /* WorkoutLiveActivityContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */; };
-		68F68B9623C2C75E9AEFAD12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8163BFE48FA81C213F5B9 /* Foundation.framework */; };
-		734A7E3B320260A9470ADBAC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F7E95F14F464801FD13C6 /* HistoryView.swift */; };
-		74298F985B4BD5E17E06D14F /* rest-end-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 898AA862ED4C0C97A5C41B30 /* rest-end-signal.wav */; };
-		774ECC3A333890520C77F1FB /* IntervalWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F432BCFE83171A800C167 /* IntervalWidgetsBundle.swift */; };
-		95B88575D379753144A6EE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142BF121334298D9CE1EED3E /* Assets.xcassets */; };
-		9A8F95643D48B0A775C302FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C081D8D0FF780A87C3ED119 /* SettingsView.swift */; };
-		9BA78285286DCEDBC0936F72 /* WorkoutSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D957EA626C82E2724751BA7 /* WorkoutSetupView.swift */; };
-		9EED24EF9F02FF3695049E40 /* blop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83AB89C5CDE7D4B9579007B3 /* blop.wav */; };
-		A823B3FBA2A76A435E84BE18 /* WorkoutLiveActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA89A7110306CE9F7B18418 /* WorkoutLiveActivityService.swift */; };
-		B48753786B26B2BB5837C47A /* WorkoutTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79ECC0AE6FE5D9B0539BDC1 /* WorkoutTimelineTests.swift */; };
-		C6FDBA87FFB63CD2A9BBBE6C /* AudioCueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EECB38104570B0FDB0A8F4A /* AudioCueService.swift */; };
-		CD201DD47CB21CC64DE760E8 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAB265C5C6AF528265D4C8 /* AppStore.swift */; };
-		D5ADA76C62FD40FE4EBA483C /* WorkoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76D7189F867E5947985C80E /* WorkoutEngine.swift */; };
-		E23978E62ACB85430DC4E128 /* IntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A3701608037D3421BC138 /* IntervalApp.swift */; };
-		EAB31BDD109F9C0A3741150E /* IntervalWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 696101C06E399E45B545FC35 /* IntervalWidgets.appex */; };
-		EB169DAABA82AD30EB2A4DEF /* WorkoutActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17255970CCAB9A11EEA4A6 /* WorkoutActivityAttributes.swift */; };
-		F26AD95C89FA3936D16E2EB5 /* WorkoutLiveActivityContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */; };
-		F2730A6FB5A0222A8CABA209 /* work-end-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8BCB4DDC16F8E88E161DB6BD /* work-end-signal.wav */; };
-		F342E6A86414FE015C5F80C8 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32671BB786DED1FEC093E7A /* DurationPickerView.swift */; };
-		F6F2682C166C54ECE37591CC /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E526CC488FE9469154414A1 /* silence.wav */; };
-		FDC18A92932C15525C34C4E5 /* WorkoutLiveActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6573EC12356903676FDE01 /* WorkoutLiveActivityWidget.swift */; };
-		FF4F6096F0DD6CFB3C6FB110 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8163BFE48FA81C213F5B9 /* Foundation.framework */; };
+		1292957814C7F5B358D4CF47 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DBB21BC3398E380E1986D /* AppStore.swift */; };
+		30F8EC75DEABA0E33D62A995 /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8CAC8ED8A0F376A5E982264 /* silence.wav */; };
+		32A2219482EEC85C08BE31B1 /* work-end-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8495192C9C6F8FB3A3BD21A7 /* work-end-signal.wav */; };
+		3EDE41B7359CAA5DC21F945D /* WorkoutActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589465B29C4E2F2DA7EBC43A /* WorkoutActivityAttributes.swift */; };
+		4541DAF7865470FC47CE8368 /* complete-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3673D42D4B15AD1E07E58CC3 /* complete-signal.wav */; };
+		5B112BBC917A06A1B328435E /* WorkoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88FAB6DEBBC358A35DCF31 /* WorkoutEngine.swift */; };
+		64795772935742BD0C3988D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D99B06229FF95452CC25273 /* Foundation.framework */; };
+		67A41AA464E91C2FAF5AEFE7 /* WorkoutActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B606238EDF333E5C3A32C5B /* WorkoutActivityAttributes.swift */; };
+		69474D4FE31D71EC59A64A59 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA5608079CE226FC017A39 /* Models.swift */; };
+		7325F27CB5BCE23F60C34184 /* IntervalWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55BAA12A36D79CEDCCB27A /* IntervalWidgetsBundle.swift */; };
+		78E5C1E45435E0F48277D954 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E236553BED1E3224D2029D /* RootView.swift */; };
+		833019D90B8551BCD6517344 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C4166C0B5A5D85FC2DD64 /* WorkoutView.swift */; };
+		8353C89B587C875BDF483B5B /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F23AD9A2A2FF9D6833A47 /* DurationPickerView.swift */; };
+		8D875C25343B74D523E3381D /* AudioCueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEBA0D0D0200CDC1A689A98 /* AudioCueService.swift */; };
+		90A6D3D638DBA9AE5150C6A0 /* start-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1A87FEE22B114D4496E8760 /* start-signal.wav */; };
+		96DB98FC9BA396F1C4B188A8 /* WorkoutSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5355A152BAD6F80ED6C9CF1A /* WorkoutSetupView.swift */; };
+		97FB9738D81DA19A2B140D70 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A683BF6A5E46B9303714B3 /* HistoryView.swift */; };
+		9B90573E7C73377497FF2831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D99B06229FF95452CC25273 /* Foundation.framework */; };
+		A857A059E2E41F4B28159FFD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5BAFB4A389C0E0C87D68E /* SettingsView.swift */; };
+		A9DBDC1EB7E96AD84BE5CD81 /* WorkoutLiveActivityContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F554B68BDAD8C2BBC33471A /* WorkoutLiveActivityContent.swift */; };
+		BB090F89369CB44C56A7863D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D99B06229FF95452CC25273 /* Foundation.framework */; };
+		BE44F4637AACDB7CF5F113B4 /* WorkoutLiveActivityContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0642C04B60BB49AEE2BF28 /* WorkoutLiveActivityContent.swift */; };
+		D069A42E09CEBC47A9C24CAE /* IntervalWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14A853997DFB0E62B7FF43B6 /* IntervalWidgets.appex */; };
+		D65E6C5A88183A546D3ACEAF /* WorkoutLiveActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3C460CDD875ED1056049C6 /* WorkoutLiveActivityWidget.swift */; };
+		D71A97C665F84DABD56668A3 /* IntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD294547489990DD17CB2172 /* IntervalApp.swift */; };
+		D92CD95917A54846DED7FA4F /* WorkoutLiveActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72B70EB17AB9DCB3F129CC /* WorkoutLiveActivityService.swift */; };
+		E10C31CBDF1601BB85DBE287 /* blop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E784680B444FFAB5DE4AC114 /* blop.wav */; };
+		EDFE540519F401156431259C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4425A49E5261EC74F4128D02 /* PrivacyInfo.xcprivacy */; };
+		EE0D95021B5F0A89EB27F5B4 /* WorkoutTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C02FC01A75F66913375447 /* WorkoutTimelineTests.swift */; };
+		F261AA695FE1EBA26D8C411C /* rest-end-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8921982A0D96D9922BFDC4B3 /* rest-end-signal.wav */; };
+		F279FD9432A1594F477E239B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727BDB6D4F739AC68761ED24 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D42E78D7537DEAE3BF82A9FE /* PBXContainerItemProxy */ = {
+		75B0210C07538ADE5637C291 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1B161DD93B07A0D224240172 /* Project object */;
+			containerPortal = 41272457637C8884C148E1FF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1BEEBBC4052E7899C63AD10;
-			remoteInfo = Interval;
-		};
-		E2B64C27A7522F2707771D6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B161DD93B07A0D224240172 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E4C9E2989B9C5FA8760093A;
+			remoteGlobalIDString = 0F48CEA0F07A9D396473FE65;
 			remoteInfo = IntervalWidgets;
+		};
+		E13D79A70BFA7F582ACCC7DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41272457637C8884C148E1FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB82F473497A32AF6B69718;
+			remoteInfo = Interval;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2F5690782CCEE5178AE26698 /* Embed App Extensions */ = {
+		3CBF06043E9BDF0D428671A9 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				EAB31BDD109F9C0A3741150E /* IntervalWidgets.appex in Embed App Extensions */,
+				D069A42E09CEBC47A9C24CAE /* IntervalWidgets.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,147 +72,151 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C081D8D0FF780A87C3ED119 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		142BF121334298D9CE1EED3E /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1D957EA626C82E2724751BA7 /* WorkoutSetupView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutSetupView.swift; sourceTree = "<group>"; };
-		1EECB38104570B0FDB0A8F4A /* AudioCueService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioCueService.swift; sourceTree = "<group>"; };
-		2EB8163BFE48FA81C213F5B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3EA89A7110306CE9F7B18418 /* WorkoutLiveActivityService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityService.swift; sourceTree = "<group>"; };
-		4C19FA49C6EA9E1B54E42941 /* Interval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interval.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DBC2A5DC0B0C550290C330B /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		5201D00290F8EDAD0B55E8EE /* WorkoutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
-		696101C06E399E45B545FC35 /* IntervalWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntervalWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A5F7E95F14F464801FD13C6 /* HistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		6B9F882D990E39C8A82F2B75 /* start-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "start-signal.wav"; path = "Sounds/start-signal.wav"; sourceTree = "<group>"; };
-		6E526CC488FE9469154414A1 /* silence.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = silence.wav; path = Sounds/silence.wav; sourceTree = "<group>"; };
-		72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityContent.swift; sourceTree = "<group>"; };
-		7B17255970CCAB9A11EEA4A6 /* WorkoutActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutActivityAttributes.swift; path = ../Interval/WorkoutActivityAttributes.swift; sourceTree = "<group>"; };
-		83AB89C5CDE7D4B9579007B3 /* blop.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = blop.wav; path = Sounds/blop.wav; sourceTree = "<group>"; };
-		898AA862ED4C0C97A5C41B30 /* rest-end-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "rest-end-signal.wav"; path = "Sounds/rest-end-signal.wav"; sourceTree = "<group>"; };
-		8BCB4DDC16F8E88E161DB6BD /* work-end-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "work-end-signal.wav"; path = "Sounds/work-end-signal.wav"; sourceTree = "<group>"; };
-		A5DAB265C5C6AF528265D4C8 /* AppStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
-		A6C8637384CAD0676FCC8E0D /* IntervalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3C81E957C1FA17E21F2B271 /* complete-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "complete-signal.wav"; path = "Sounds/complete-signal.wav"; sourceTree = "<group>"; };
-		C79ECC0AE6FE5D9B0539BDC1 /* WorkoutTimelineTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutTimelineTests.swift; sourceTree = "<group>"; };
-		D09F432BCFE83171A800C167 /* IntervalWidgetsBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntervalWidgetsBundle.swift; sourceTree = "<group>"; };
-		D32671BB786DED1FEC093E7A /* DurationPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
-		DD6C251E6F6EB1432529C6DE /* WorkoutActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutActivityAttributes.swift; sourceTree = "<group>"; };
-		DF6573EC12356903676FDE01 /* WorkoutLiveActivityWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityWidget.swift; sourceTree = "<group>"; };
-		E76D7189F867E5947985C80E /* WorkoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutEngine.swift; sourceTree = "<group>"; };
-		F01A3701608037D3421BC138 /* IntervalApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntervalApp.swift; sourceTree = "<group>"; };
-		FA32503C9E4CFF9C871F5113 /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		09BA5608079CE226FC017A39 /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		0D4C4166C0B5A5D85FC2DD64 /* WorkoutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		14A853997DFB0E62B7FF43B6 /* IntervalWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntervalWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		237F23AD9A2A2FF9D6833A47 /* DurationPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
+		3673D42D4B15AD1E07E58CC3 /* complete-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "complete-signal.wav"; path = "Sounds/complete-signal.wav"; sourceTree = "<group>"; };
+		4425A49E5261EC74F4128D02 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4F554B68BDAD8C2BBC33471A /* WorkoutLiveActivityContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityContent.swift; sourceTree = "<group>"; };
+		4F88FAB6DEBBC358A35DCF31 /* WorkoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutEngine.swift; sourceTree = "<group>"; };
+		50A683BF6A5E46B9303714B3 /* HistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		5355A152BAD6F80ED6C9CF1A /* WorkoutSetupView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutSetupView.swift; sourceTree = "<group>"; };
+		589465B29C4E2F2DA7EBC43A /* WorkoutActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutActivityAttributes.swift; sourceTree = "<group>"; };
+		5A72B70EB17AB9DCB3F129CC /* WorkoutLiveActivityService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityService.swift; sourceTree = "<group>"; };
+		5D99B06229FF95452CC25273 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		727BDB6D4F739AC68761ED24 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A55BAA12A36D79CEDCCB27A /* IntervalWidgetsBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntervalWidgetsBundle.swift; sourceTree = "<group>"; };
+		8495192C9C6F8FB3A3BD21A7 /* work-end-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "work-end-signal.wav"; path = "Sounds/work-end-signal.wav"; sourceTree = "<group>"; };
+		8921982A0D96D9922BFDC4B3 /* rest-end-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "rest-end-signal.wav"; path = "Sounds/rest-end-signal.wav"; sourceTree = "<group>"; };
+		9B606238EDF333E5C3A32C5B /* WorkoutActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutActivityAttributes.swift; path = ../Interval/WorkoutActivityAttributes.swift; sourceTree = "<group>"; };
+		B8CAC8ED8A0F376A5E982264 /* silence.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = silence.wav; path = Sounds/silence.wav; sourceTree = "<group>"; };
+		BD3C460CDD875ED1056049C6 /* WorkoutLiveActivityWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityWidget.swift; sourceTree = "<group>"; };
+		BE0642C04B60BB49AEE2BF28 /* WorkoutLiveActivityContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutLiveActivityContent.swift; path = ../Interval/WorkoutLiveActivityContent.swift; sourceTree = "<group>"; };
+		C1A87FEE22B114D4496E8760 /* start-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "start-signal.wav"; path = "Sounds/start-signal.wav"; sourceTree = "<group>"; };
+		CFEBA0D0D0200CDC1A689A98 /* AudioCueService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioCueService.swift; sourceTree = "<group>"; };
+		D5C02FC01A75F66913375447 /* WorkoutTimelineTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutTimelineTests.swift; sourceTree = "<group>"; };
+		DD294547489990DD17CB2172 /* IntervalApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntervalApp.swift; sourceTree = "<group>"; };
+		E44DBB21BC3398E380E1986D /* AppStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		E47BC1233260E4D46FE54815 /* Interval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interval.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E784680B444FFAB5DE4AC114 /* blop.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = blop.wav; path = Sounds/blop.wav; sourceTree = "<group>"; };
+		E973509F270A5BDB1687D03C /* IntervalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D5BAFB4A389C0E0C87D68E /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F0E236553BED1E3224D2029D /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2766F398725A0C6E37733E68 /* Frameworks */ = {
+		978130EC7B68289A84AF96B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F68B9623C2C75E9AEFAD12 /* Foundation.framework in Frameworks */,
+				9B90573E7C73377497FF2831 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		517B375A0977FFEB7324C3A5 /* Frameworks */ = {
+		B69121B0A9EC5E5EBA5AD9A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				502D73286906EC96D339E623 /* Foundation.framework in Frameworks */,
+				BB090F89369CB44C56A7863D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A64672FB479232311BF6D0C2 /* Frameworks */ = {
+		EB0E511E59388ABC04B794AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4F6096F0DD6CFB3C6FB110 /* Foundation.framework in Frameworks */,
+				64795772935742BD0C3988D9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		34C4935C74C548228D72E883 = {
+		1930BA98F66BE820B5495F91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EB9445D702BBA43D0AAA820 /* Products */,
-				F947C0FE9978C28A45953593 /* Frameworks */,
-				46D542234ADF449DB05B88A5 /* Interval */,
-				9BD2D736FA2B7E5D1B18FBE9 /* IntervalTests */,
-				7DAF1EDDF679F1BD7E4677A8 /* IntervalWidgets */,
-			);
-			sourceTree = "<group>";
-		};
-		3EB9445D702BBA43D0AAA820 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4C19FA49C6EA9E1B54E42941 /* Interval.app */,
-				A6C8637384CAD0676FCC8E0D /* IntervalTests.xctest */,
-				696101C06E399E45B545FC35 /* IntervalWidgets.appex */,
+				E47BC1233260E4D46FE54815 /* Interval.app */,
+				E973509F270A5BDB1687D03C /* IntervalTests.xctest */,
+				14A853997DFB0E62B7FF43B6 /* IntervalWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46D542234ADF449DB05B88A5 /* Interval */ = {
+		2BFDD300F26A91F84858C90D /* IntervalTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5DAB265C5C6AF528265D4C8 /* AppStore.swift */,
-				1EECB38104570B0FDB0A8F4A /* AudioCueService.swift */,
-				D32671BB786DED1FEC093E7A /* DurationPickerView.swift */,
-				6A5F7E95F14F464801FD13C6 /* HistoryView.swift */,
-				F01A3701608037D3421BC138 /* IntervalApp.swift */,
-				FA32503C9E4CFF9C871F5113 /* Models.swift */,
-				4DBC2A5DC0B0C550290C330B /* RootView.swift */,
-				0C081D8D0FF780A87C3ED119 /* SettingsView.swift */,
-				DD6C251E6F6EB1432529C6DE /* WorkoutActivityAttributes.swift */,
-				72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */,
-				E76D7189F867E5947985C80E /* WorkoutEngine.swift */,
-				3EA89A7110306CE9F7B18418 /* WorkoutLiveActivityService.swift */,
-				1D957EA626C82E2724751BA7 /* WorkoutSetupView.swift */,
-				5201D00290F8EDAD0B55E8EE /* WorkoutView.swift */,
-				142BF121334298D9CE1EED3E /* Assets.xcassets */,
-				83AB89C5CDE7D4B9579007B3 /* blop.wav */,
-				B3C81E957C1FA17E21F2B271 /* complete-signal.wav */,
-				898AA862ED4C0C97A5C41B30 /* rest-end-signal.wav */,
-				6E526CC488FE9469154414A1 /* silence.wav */,
-				6B9F882D990E39C8A82F2B75 /* start-signal.wav */,
-				8BCB4DDC16F8E88E161DB6BD /* work-end-signal.wav */,
-			);
-			name = Interval;
-			path = Interval;
-			sourceTree = "<group>";
-		};
-		7DAF1EDDF679F1BD7E4677A8 /* IntervalWidgets */ = {
-			isa = PBXGroup;
-			children = (
-				D09F432BCFE83171A800C167 /* IntervalWidgetsBundle.swift */,
-				DF6573EC12356903676FDE01 /* WorkoutLiveActivityWidget.swift */,
-				7B17255970CCAB9A11EEA4A6 /* WorkoutActivityAttributes.swift */,
-			);
-			name = IntervalWidgets;
-			path = IntervalWidgets;
-			sourceTree = "<group>";
-		};
-		8BB5BDB66A2AD02EE1C58CE6 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2EB8163BFE48FA81C213F5B9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		9BD2D736FA2B7E5D1B18FBE9 /* IntervalTests */ = {
-			isa = PBXGroup;
-			children = (
-				C79ECC0AE6FE5D9B0539BDC1 /* WorkoutTimelineTests.swift */,
+				D5C02FC01A75F66913375447 /* WorkoutTimelineTests.swift */,
 			);
 			name = IntervalTests;
 			path = IntervalTests;
 			sourceTree = "<group>";
 		};
-		F947C0FE9978C28A45953593 /* Frameworks */ = {
+		4FB0E525CF4EDA963D55B5E5 = {
 			isa = PBXGroup;
 			children = (
-				8BB5BDB66A2AD02EE1C58CE6 /* iOS */,
+				1930BA98F66BE820B5495F91 /* Products */,
+				C20F4B2EB0A759E49B5AB147 /* Frameworks */,
+				5C2D068DEF98C79A57F56E50 /* Interval */,
+				2BFDD300F26A91F84858C90D /* IntervalTests */,
+				A797BECF5D6FA007C7EE389D /* IntervalWidgets */,
+			);
+			sourceTree = "<group>";
+		};
+		5C2D068DEF98C79A57F56E50 /* Interval */ = {
+			isa = PBXGroup;
+			children = (
+				E44DBB21BC3398E380E1986D /* AppStore.swift */,
+				CFEBA0D0D0200CDC1A689A98 /* AudioCueService.swift */,
+				237F23AD9A2A2FF9D6833A47 /* DurationPickerView.swift */,
+				50A683BF6A5E46B9303714B3 /* HistoryView.swift */,
+				DD294547489990DD17CB2172 /* IntervalApp.swift */,
+				09BA5608079CE226FC017A39 /* Models.swift */,
+				F0E236553BED1E3224D2029D /* RootView.swift */,
+				F0D5BAFB4A389C0E0C87D68E /* SettingsView.swift */,
+				589465B29C4E2F2DA7EBC43A /* WorkoutActivityAttributes.swift */,
+				4F88FAB6DEBBC358A35DCF31 /* WorkoutEngine.swift */,
+				4F554B68BDAD8C2BBC33471A /* WorkoutLiveActivityContent.swift */,
+				5A72B70EB17AB9DCB3F129CC /* WorkoutLiveActivityService.swift */,
+				5355A152BAD6F80ED6C9CF1A /* WorkoutSetupView.swift */,
+				0D4C4166C0B5A5D85FC2DD64 /* WorkoutView.swift */,
+				727BDB6D4F739AC68761ED24 /* Assets.xcassets */,
+				4425A49E5261EC74F4128D02 /* PrivacyInfo.xcprivacy */,
+				E784680B444FFAB5DE4AC114 /* blop.wav */,
+				3673D42D4B15AD1E07E58CC3 /* complete-signal.wav */,
+				8921982A0D96D9922BFDC4B3 /* rest-end-signal.wav */,
+				B8CAC8ED8A0F376A5E982264 /* silence.wav */,
+				C1A87FEE22B114D4496E8760 /* start-signal.wav */,
+				8495192C9C6F8FB3A3BD21A7 /* work-end-signal.wav */,
+			);
+			name = Interval;
+			path = Interval;
+			sourceTree = "<group>";
+		};
+		8E04F52FAE8C56353E6AEC79 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5D99B06229FF95452CC25273 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A797BECF5D6FA007C7EE389D /* IntervalWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				7A55BAA12A36D79CEDCCB27A /* IntervalWidgetsBundle.swift */,
+				BD3C460CDD875ED1056049C6 /* WorkoutLiveActivityWidget.swift */,
+				9B606238EDF333E5C3A32C5B /* WorkoutActivityAttributes.swift */,
+				BE0642C04B60BB49AEE2BF28 /* WorkoutLiveActivityContent.swift */,
+			);
+			name = IntervalWidgets;
+			path = IntervalWidgets;
+			sourceTree = "<group>";
+		};
+		C20F4B2EB0A759E49B5AB147 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E04F52FAE8C56353E6AEC79 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,13 +224,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1E4C9E2989B9C5FA8760093A /* IntervalWidgets */ = {
+		0AB82F473497A32AF6B69718 /* Interval */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E54A97859564E4E87BE09204 /* Build configuration list for PBXNativeTarget "IntervalWidgets" */;
+			buildConfigurationList = EA34705F7E72F34DCFC5C5C8 /* Build configuration list for PBXNativeTarget "Interval" */;
 			buildPhases = (
-				0FCF863A81CE0DF0B96A12B4 /* Sources */,
-				A64672FB479232311BF6D0C2 /* Frameworks */,
-				6AE3024FB521F780D73CBB79 /* Resources */,
+				81B98FB43F43BF19D99E0796 /* Sources */,
+				EB0E511E59388ABC04B794AE /* Frameworks */,
+				5AAADFC2C44232DA6DCA1615 /* Resources */,
+				3CBF06043E9BDF0D428671A9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				980411BE059F1027573F018E /* PBXTargetDependency */,
+			);
+			name = Interval;
+			productName = Interval;
+			productReference = E47BC1233260E4D46FE54815 /* Interval.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0F48CEA0F07A9D396473FE65 /* IntervalWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E908F395306C91C1CC2D8EC8 /* Build configuration list for PBXNativeTarget "IntervalWidgets" */;
+			buildPhases = (
+				D105EB05074F9A6B4CA68FFA /* Sources */,
+				B69121B0A9EC5E5EBA5AD9A2 /* Frameworks */,
+				6B28231D3FA182E55C44E2EA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -233,56 +257,37 @@
 			);
 			name = IntervalWidgets;
 			productName = IntervalWidgets;
-			productReference = 696101C06E399E45B545FC35 /* IntervalWidgets.appex */;
+			productReference = 14A853997DFB0E62B7FF43B6 /* IntervalWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		2F8E0DD210599D8FDA9D4BD4 /* IntervalTests */ = {
+		9D915CA84BB21410DD6ACF22 /* IntervalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EA31294A35DC520567215C9 /* Build configuration list for PBXNativeTarget "IntervalTests" */;
+			buildConfigurationList = CABF10A5D93A894AF79A9BF4 /* Build configuration list for PBXNativeTarget "IntervalTests" */;
 			buildPhases = (
-				0ED7B4D14C965D713BFC45CB /* Sources */,
-				517B375A0977FFEB7324C3A5 /* Frameworks */,
-				10BBCF67842B9E91188C738D /* Resources */,
+				082D9A1C21CDED2D1F013169 /* Sources */,
+				978130EC7B68289A84AF96B4 /* Frameworks */,
+				50AADB8C15AFAA48BB33B19F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B773C3084C0A583E6A646587 /* PBXTargetDependency */,
+				FA6F1C928D46BF108FBC04F4 /* PBXTargetDependency */,
 			);
 			name = IntervalTests;
 			productName = IntervalTests;
-			productReference = A6C8637384CAD0676FCC8E0D /* IntervalTests.xctest */;
+			productReference = E973509F270A5BDB1687D03C /* IntervalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A1BEEBBC4052E7899C63AD10 /* Interval */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F15B9753C1540C29E90B21CB /* Build configuration list for PBXNativeTarget "Interval" */;
-			buildPhases = (
-				07AFDF9BF79A4F6A724F9269 /* Sources */,
-				2766F398725A0C6E37733E68 /* Frameworks */,
-				C8F90FC676BBCC99C7E0FEF9 /* Resources */,
-				2F5690782CCEE5178AE26698 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C96D90BEEDB8CF203675E58E /* PBXTargetDependency */,
-			);
-			name = Interval;
-			productName = Interval;
-			productReference = 4C19FA49C6EA9E1B54E42941 /* Interval.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1B161DD93B07A0D224240172 /* Project object */ = {
+		41272457637C8884C148E1FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 2630;
 			};
-			buildConfigurationList = 34B42626EA2CA2E1672682C3 /* Build configuration list for PBXProject "Interval" */;
+			buildConfigurationList = 8447572F1F95DDE596F9F7D3 /* Build configuration list for PBXProject "Interval" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -290,166 +295,116 @@
 				en,
 				Base,
 			);
-			mainGroup = 34C4935C74C548228D72E883;
+			mainGroup = 4FB0E525CF4EDA963D55B5E5;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 3EB9445D702BBA43D0AAA820 /* Products */;
+			productRefGroup = 1930BA98F66BE820B5495F91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1BEEBBC4052E7899C63AD10 /* Interval */,
-				2F8E0DD210599D8FDA9D4BD4 /* IntervalTests */,
-				1E4C9E2989B9C5FA8760093A /* IntervalWidgets */,
+				0AB82F473497A32AF6B69718 /* Interval */,
+				9D915CA84BB21410DD6ACF22 /* IntervalTests */,
+				0F48CEA0F07A9D396473FE65 /* IntervalWidgets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		10BBCF67842B9E91188C738D /* Resources */ = {
+		50AADB8C15AFAA48BB33B19F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6AE3024FB521F780D73CBB79 /* Resources */ = {
+		5AAADFC2C44232DA6DCA1615 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F279FD9432A1594F477E239B /* Assets.xcassets in Resources */,
+				EDFE540519F401156431259C /* PrivacyInfo.xcprivacy in Resources */,
+				E10C31CBDF1601BB85DBE287 /* blop.wav in Resources */,
+				4541DAF7865470FC47CE8368 /* complete-signal.wav in Resources */,
+				F261AA695FE1EBA26D8C411C /* rest-end-signal.wav in Resources */,
+				30F8EC75DEABA0E33D62A995 /* silence.wav in Resources */,
+				90A6D3D638DBA9AE5150C6A0 /* start-signal.wav in Resources */,
+				32A2219482EEC85C08BE31B1 /* work-end-signal.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8F90FC676BBCC99C7E0FEF9 /* Resources */ = {
+		6B28231D3FA182E55C44E2EA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95B88575D379753144A6EE21 /* Assets.xcassets in Resources */,
-				9EED24EF9F02FF3695049E40 /* blop.wav in Resources */,
-				317D118403B94EBD38991533 /* complete-signal.wav in Resources */,
-				74298F985B4BD5E17E06D14F /* rest-end-signal.wav in Resources */,
-				F6F2682C166C54ECE37591CC /* silence.wav in Resources */,
-				51417D939A0CA60BB1D88149 /* start-signal.wav in Resources */,
-				F2730A6FB5A0222A8CABA209 /* work-end-signal.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07AFDF9BF79A4F6A724F9269 /* Sources */ = {
+		082D9A1C21CDED2D1F013169 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD201DD47CB21CC64DE760E8 /* AppStore.swift in Sources */,
-				C6FDBA87FFB63CD2A9BBBE6C /* AudioCueService.swift in Sources */,
-				F342E6A86414FE015C5F80C8 /* DurationPickerView.swift in Sources */,
-				734A7E3B320260A9470ADBAC /* HistoryView.swift in Sources */,
-				E23978E62ACB85430DC4E128 /* IntervalApp.swift in Sources */,
-				13E54CD1F9399D76AD80D5AD /* Models.swift in Sources */,
-				3BC21AA1DE5BFB78C76A298C /* RootView.swift in Sources */,
-				9A8F95643D48B0A775C302FC /* SettingsView.swift in Sources */,
-				676895593673089377082013 /* WorkoutActivityAttributes.swift in Sources */,
-				6D1AC1979547A391F73740A1 /* WorkoutLiveActivityContent.swift in Sources */,
-				D5ADA76C62FD40FE4EBA483C /* WorkoutEngine.swift in Sources */,
-				A823B3FBA2A76A435E84BE18 /* WorkoutLiveActivityService.swift in Sources */,
-				9BA78285286DCEDBC0936F72 /* WorkoutSetupView.swift in Sources */,
-				09FB9C0482DC8C068ED043A9 /* WorkoutView.swift in Sources */,
+				EE0D95021B5F0A89EB27F5B4 /* WorkoutTimelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0ED7B4D14C965D713BFC45CB /* Sources */ = {
+		81B98FB43F43BF19D99E0796 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B48753786B26B2BB5837C47A /* WorkoutTimelineTests.swift in Sources */,
+				1292957814C7F5B358D4CF47 /* AppStore.swift in Sources */,
+				8D875C25343B74D523E3381D /* AudioCueService.swift in Sources */,
+				8353C89B587C875BDF483B5B /* DurationPickerView.swift in Sources */,
+				97FB9738D81DA19A2B140D70 /* HistoryView.swift in Sources */,
+				D71A97C665F84DABD56668A3 /* IntervalApp.swift in Sources */,
+				69474D4FE31D71EC59A64A59 /* Models.swift in Sources */,
+				78E5C1E45435E0F48277D954 /* RootView.swift in Sources */,
+				A857A059E2E41F4B28159FFD /* SettingsView.swift in Sources */,
+				3EDE41B7359CAA5DC21F945D /* WorkoutActivityAttributes.swift in Sources */,
+				5B112BBC917A06A1B328435E /* WorkoutEngine.swift in Sources */,
+				A9DBDC1EB7E96AD84BE5CD81 /* WorkoutLiveActivityContent.swift in Sources */,
+				D92CD95917A54846DED7FA4F /* WorkoutLiveActivityService.swift in Sources */,
+				96DB98FC9BA396F1C4B188A8 /* WorkoutSetupView.swift in Sources */,
+				833019D90B8551BCD6517344 /* WorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0FCF863A81CE0DF0B96A12B4 /* Sources */ = {
+		D105EB05074F9A6B4CA68FFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774ECC3A333890520C77F1FB /* IntervalWidgetsBundle.swift in Sources */,
-				FDC18A92932C15525C34C4E5 /* WorkoutLiveActivityWidget.swift in Sources */,
-				EB169DAABA82AD30EB2A4DEF /* WorkoutActivityAttributes.swift in Sources */,
-				F26AD95C89FA3936D16E2EB5 /* WorkoutLiveActivityContent.swift in Sources */,
+				7325F27CB5BCE23F60C34184 /* IntervalWidgetsBundle.swift in Sources */,
+				D65E6C5A88183A546D3ACEAF /* WorkoutLiveActivityWidget.swift in Sources */,
+				67A41AA464E91C2FAF5AEFE7 /* WorkoutActivityAttributes.swift in Sources */,
+				BE44F4637AACDB7CF5F113B4 /* WorkoutLiveActivityContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B773C3084C0A583E6A646587 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Interval;
-			target = A1BEEBBC4052E7899C63AD10 /* Interval */;
-			targetProxy = D42E78D7537DEAE3BF82A9FE /* PBXContainerItemProxy */;
-		};
-		C96D90BEEDB8CF203675E58E /* PBXTargetDependency */ = {
+		980411BE059F1027573F018E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = IntervalWidgets;
-			target = 1E4C9E2989B9C5FA8760093A /* IntervalWidgets */;
-			targetProxy = E2B64C27A7522F2707771D6E /* PBXContainerItemProxy */;
+			target = 0F48CEA0F07A9D396473FE65 /* IntervalWidgets */;
+			targetProxy = 75B0210C07538ADE5637C291 /* PBXContainerItemProxy */;
+		};
+		FA6F1C928D46BF108FBC04F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Interval;
+			target = 0AB82F473497A32AF6B69718 /* Interval */;
+			targetProxy = E13D79A70BFA7F582ACCC7DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		148BBE69C9CE0A81DFA7623B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Interval/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bundsgaard.interval;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		1B5C5C21C1155E2D4D6987A9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bundsgaard.interval.tests;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Interval.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval";
-			};
-			name = Debug;
-		};
-		869DD483BAD1DFE55539A45B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bundsgaard.interval.tests;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Interval.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		92ACEB81A65374E47018C182 /* Debug */ = {
+		12C677FA5E4F5090C8FD68F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_BUNDLE_ID = com.bundsgaard.interval;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -480,6 +435,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -497,6 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -507,10 +464,100 @@
 			};
 			name = Debug;
 		};
-		9DDFDC06CD9E09033722F4F4 /* Release */ = {
+		6B4D1DCF1FD3516F78D4CFAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).tests";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Interval.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval";
+			};
+			name = Debug;
+		};
+		76BCC7E0FEE0694EF82A56AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IntervalWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).widgets";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D335DFEF2F8F2F09868D08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).tests";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Interval.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86D3B08F06363564C81FD079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Interval/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		931F54CA7EC9DEF9F3F083E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IntervalWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID).widgets";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B890AFED81A1F75D998992B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_BUNDLE_ID = com.bundsgaard.interval;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -541,6 +588,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -552,6 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,7 +610,7 @@
 			};
 			name = Release;
 		};
-		DE1A8D73B80533C612CBBE6A /* Release */ = {
+		F7FF04DD3F8003CB18B15E1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -573,91 +622,54 @@
 				INFOPLIST_FILE = Interval/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bundsgaard.interval;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		ED07B7E66D365A0C08CA14F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = IntervalWidgets/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bundsgaard.interval.widgets;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F9A2366610BFE10AC7C59694 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = IntervalWidgets/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bundsgaard.interval.widgets;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		34B42626EA2CA2E1672682C3 /* Build configuration list for PBXProject "Interval" */ = {
+		8447572F1F95DDE596F9F7D3 /* Build configuration list for PBXProject "Interval" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				92ACEB81A65374E47018C182 /* Debug */,
-				9DDFDC06CD9E09033722F4F4 /* Release */,
+				12C677FA5E4F5090C8FD68F0 /* Debug */,
+				B890AFED81A1F75D998992B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EA31294A35DC520567215C9 /* Build configuration list for PBXNativeTarget "IntervalTests" */ = {
+		CABF10A5D93A894AF79A9BF4 /* Build configuration list for PBXNativeTarget "IntervalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				869DD483BAD1DFE55539A45B /* Release */,
-				1B5C5C21C1155E2D4D6987A9 /* Debug */,
+				7D335DFEF2F8F2F09868D08E /* Release */,
+				6B4D1DCF1FD3516F78D4CFAA /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E54A97859564E4E87BE09204 /* Build configuration list for PBXNativeTarget "IntervalWidgets" */ = {
+		E908F395306C91C1CC2D8EC8 /* Build configuration list for PBXNativeTarget "IntervalWidgets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED07B7E66D365A0C08CA14F1 /* Release */,
-				F9A2366610BFE10AC7C59694 /* Debug */,
+				76BCC7E0FEE0694EF82A56AB /* Release */,
+				931F54CA7EC9DEF9F3F083E4 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F15B9753C1540C29E90B21CB /* Build configuration list for PBXNativeTarget "Interval" */ = {
+		EA34705F7E72F34DCFC5C5C8 /* Build configuration list for PBXNativeTarget "Interval" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE1A8D73B80533C612CBBE6A /* Release */,
-				148BBE69C9CE0A81DFA7623B /* Debug */,
+				F7FF04DD3F8003CB18B15E1D /* Release */,
+				86D3B08F06363564C81FD079 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1B161DD93B07A0D224240172 /* Project object */;
+	rootObject = 41272457637C8884C148E1FF /* Project object */;
 }
