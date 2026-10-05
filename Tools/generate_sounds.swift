@@ -63,10 +63,17 @@ let higher = ToneSegment(frequency: 1_175, duration: 0.48, amplitude: 0.48)
 let low = ToneSegment(frequency: 440, duration: 0.48, amplitude: 0.48)
 let restHigh = ToneSegment(frequency: 740, duration: 0.14, amplitude: 0.48)
 let restHigher = ToneSegment(frequency: 1_040, duration: 0.48, amplitude: 0.48)
+let victoryPause = ToneSegment(frequency: 0, duration: 0.04, amplitude: 0)
+let victoryC = ToneSegment(frequency: 523, duration: 0.12, amplitude: 0.50)
+let victoryE = ToneSegment(frequency: 659, duration: 0.12, amplitude: 0.50)
+let victoryG = ToneSegment(frequency: 784, duration: 0.14, amplitude: 0.52)
+let victoryHighC = ToneSegment(frequency: 1_047, duration: 0.38, amplitude: 0.54)
 
 try writeWave(name: "start-signal", segments: [high, pause, high, pause, higher])
 try writeWave(name: "work-end-signal", segments: [high, pause, high, pause, low])
 try writeWave(name: "rest-end-signal", segments: [restHigh, pause, restHigh, pause, restHigher])
-try writeWave(name: "complete-signal", segments: [high, pause, higher, pause, higher])
+try writeWave(name: "complete-signal", segments: [
+    victoryC, victoryPause, victoryE, victoryPause, victoryG, victoryPause, victoryHighC
+])
 try writeWave(name: "blop", segments: [ToneSegment(frequency: 660, duration: 0.11, amplitude: 0.38)])
 try writeWave(name: "silence", segments: [ToneSegment(frequency: 0, duration: 0.10, amplitude: 0)])

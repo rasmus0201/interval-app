@@ -46,6 +46,7 @@ Interval uses the quiet visual discipline of an athletics timing board. The inte
 - The active workout keeps phase, countdown, progress, reset, pause, and skip visible in one full-screen surface.
 - At accessibility text sizes, pause and skip use labeled symbols to preserve the countdown area and VoiceOver names.
 - History rows show the completion date and configuration. A detail view can load the same configuration into setup.
+- A Live Activity keeps phase, countdown, round, and repetition visible on the Lock Screen and in the Dynamic Island.
 
 ## Review
 

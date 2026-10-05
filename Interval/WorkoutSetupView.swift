@@ -30,18 +30,23 @@ struct WorkoutSetupView: View {
                     Stepper(value: $store.configuration.rounds, in: 1...50) {
                         valueRow(title: "Runder", value: "\(store.configuration.rounds)")
                     }
+                } footer: {
+                    Text("Gentagelser køres før hvilen mellem runder.")
                 }
 
                 Section {
                     DurationLink(
-                        title: "Rundepause",
+                        title: "Ekstra rundepause",
                         seconds: $store.configuration.roundRestSeconds,
                         minimumSeconds: 0
                     )
                 } footer: {
-                    Text(workoutSummary)
-                        .frame(maxWidth: .infinity)
-                        .multilineTextAlignment(.center)
+                    VStack(spacing: 6) {
+                        Text("Lægges til hviletiden mellem runder.")
+                        Text(workoutSummary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
                 }
             }
             .navigationTitle("Træning")
@@ -73,7 +78,7 @@ struct WorkoutSetupView: View {
     }
 
     private var workoutSummary: String {
-        let duration = store.configuration.durationWithoutWarmup + store.settings.startCountdownSeconds
+        let duration = store.configuration.durationWithoutWarmup
         return "\(duration.shortDurationText) · \(store.configuration.workIntervalCount) arbejdsintervaller"
     }
 

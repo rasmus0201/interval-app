@@ -2,7 +2,7 @@ import XCTest
 @testable import Interval
 
 final class WorkoutTimelineTests: XCTestCase {
-    func testBuildsRepetitionsInsideRounds() {
+    func testBuildsRepetitionsBeforeBreakBetweenRounds() {
         let configuration = WorkoutConfiguration(
             workSeconds: 45,
             restSeconds: 15,
@@ -15,11 +15,34 @@ final class WorkoutTimelineTests: XCTestCase {
 
         XCTAssertEqual(steps.map(\.phase), [
             .warmup,
-            .work, .rest, .work, .rest, .work,
+            .work, .work, .work,
             .roundRest,
-            .work, .rest, .work, .rest, .work
+            .work, .work, .work
         ])
-        XCTAssertEqual(steps.reduce(0) { $0 + $1.duration }, 400)
+        XCTAssertEqual(steps.reduce(0) { $0 + $1.duration }, 355)
+    }
+
+    func testExpectedDurationExcludesStartCountdown() {
+        let configuration = WorkoutConfiguration(
+            workSeconds: 120,
+            restSeconds: 30,
+            repetitions: 1,
+            rounds: 8,
+            roundRestSeconds: 0
+        )
+
+        let steps = WorkoutTimeline.steps(configuration: configuration, startCountdownSeconds: 30)
+        let historyEntry = WorkoutHistoryEntry(
+            configuration: configuration,
+            startCountdownSeconds: 30
+        )
+
+        XCTAssertEqual(configuration.durationWithoutWarmup, 19 * 60 + 30)
+        XCTAssertEqual(historyEntry.totalSeconds, 19 * 60 + 30)
+        XCTAssertEqual(steps.reduce(0) { $0 + $1.duration }, 20 * 60)
+        XCTAssertEqual(steps.filter { $0.phase == .work }.count, 8)
+        XCTAssertEqual(steps.filter { $0.phase == .rest }.count, 7)
+        XCTAssertFalse(steps.contains { $0.phase == .roundRest })
     }
 
     func testOmitsZeroLengthAndTrailingRestSteps() {

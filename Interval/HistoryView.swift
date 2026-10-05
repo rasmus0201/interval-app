@@ -73,7 +73,7 @@ private struct HistoryDetailView: View {
                 LabeledContent("Hvile", value: entry.configuration.restSeconds.timerText)
                 LabeledContent("Gentagelser", value: "\(entry.configuration.repetitions)")
                 LabeledContent("Runder", value: "\(entry.configuration.rounds)")
-                LabeledContent("Rundepause", value: entry.configuration.roundRestSeconds.timerText)
+                LabeledContent("Ekstra rundepause", value: entry.configuration.roundRestSeconds.timerText)
             }
 
             Section {

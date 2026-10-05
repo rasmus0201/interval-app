@@ -28,7 +28,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Træningsfeedback")
                 } footer: {
-                    Text("Biptoner giver tydelige fasesignaler. Vibration følger enhedens indstillinger.")
+                    Text("Biptoner afspilles også, når telefonen er låst eller på lydløs. Vibration følger enhedens indstillinger.")
                 }
             }
             .navigationTitle("Indstillinger")

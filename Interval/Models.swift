@@ -5,7 +5,7 @@ struct WorkoutConfiguration: Codable, Equatable, Hashable {
     var restSeconds = 15
     var repetitions = 8
     var rounds = 3
-    var roundRestSeconds = 60
+    var roundRestSeconds = 0
 
     var workIntervalCount: Int {
         repetitions * rounds
@@ -13,9 +13,8 @@ struct WorkoutConfiguration: Codable, Equatable, Hashable {
 
     var durationWithoutWarmup: Int {
         let work = workSeconds * repetitions * rounds
-        let restsWithinRounds = restSeconds * max(repetitions - 1, 0) * rounds
-        let roundPauses = roundRestSeconds * max(rounds - 1, 0)
-        return work + restsWithinRounds + roundPauses
+        let breaksBetweenRounds = (restSeconds + roundRestSeconds) * max(rounds - 1, 0)
+        return work + breaksBetweenRounds
     }
 }
 
@@ -24,6 +23,7 @@ struct AppSettings: Codable, Equatable {
         case silent
         case vibration
         case tones
+        case tonesAndVibration
 
         var id: Self { self }
 
@@ -32,6 +32,7 @@ struct AppSettings: Codable, Equatable {
             case .silent: "Lydløs"
             case .vibration: "Vibration"
             case .tones: "Biptoner"
+            case .tonesAndVibration: "Bip + vibration"
             }
         }
     }
@@ -59,7 +60,7 @@ struct WorkoutHistoryEntry: Codable, Identifiable, Equatable {
     }
 
     var totalSeconds: Int {
-        configuration.durationWithoutWarmup + startCountdownSeconds
+        configuration.durationWithoutWarmup
     }
 }
 
@@ -102,33 +103,25 @@ enum WorkoutTimeline {
             : []
 
         let workout = (1...configuration.rounds).flatMap { round in
-            let repetitions = (1...configuration.repetitions).flatMap { repetition in
-                let work = WorkoutStep(
+            let repetitions = (1...configuration.repetitions).map { repetition in
+                WorkoutStep(
                     phase: .work,
                     duration: configuration.workSeconds,
                     repetition: repetition,
                     round: round
                 )
-                let rest = repetition < configuration.repetitions && configuration.restSeconds > 0
-                    ? [WorkoutStep(
-                        phase: .rest,
-                        duration: configuration.restSeconds,
-                        repetition: repetition,
-                        round: round
-                    )]
-                    : []
-                return [work] + rest
             }
 
-            let roundRest = round < configuration.rounds && configuration.roundRestSeconds > 0
+            let breakDuration = configuration.restSeconds + configuration.roundRestSeconds
+            let roundBreak = round < configuration.rounds && breakDuration > 0
                 ? [WorkoutStep(
-                    phase: .roundRest,
-                    duration: configuration.roundRestSeconds,
+                    phase: configuration.roundRestSeconds > 0 ? .roundRest : .rest,
+                    duration: breakDuration,
                     repetition: configuration.repetitions,
                     round: round
                 )]
                 : []
-            return repetitions + roundRest
+            return repetitions + roundBreak
         }
 
         return warmup + workout

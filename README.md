@@ -12,7 +12,7 @@ The app uses the bundle identifier `com.bundsgaard.interval`. No development tea
 
 ## Lock-screen timing
 
-The app schedules local notifications for phase boundaries. Allow notifications when the first workout starts. Custom sounds provide the configured phase cues while the screen is locked. The timer uses absolute elapsed time, so it catches up correctly after the app returns to the foreground.
+The app keeps an audio session active during a workout. Phase cues therefore play while the screen is locked and when the silent switch is enabled, as long as media volume is audible. A Live Activity shows the current phase, countdown, round, and repetition on the Lock Screen and in the Dynamic Island. The timer uses absolute elapsed time, so it catches up correctly after the app returns to the foreground.
 
 ## Generated project files
 

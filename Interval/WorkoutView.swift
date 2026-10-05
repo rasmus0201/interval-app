@@ -97,7 +97,7 @@ struct WorkoutView: View {
                 .animation(reduceMotion ? nil : .snappy, value: engine.remainingSeconds)
                 .accessibilityLabel("\(engine.remainingSeconds) sekunder tilbage")
 
-            if engine.currentStep.phase == .work || engine.currentStep.phase == .rest {
+            if engine.currentStep.phase == .work {
                 Text("Gentagelse \(engine.currentStep.repetition) / \(engine.configuration.repetitions)")
                     .font(.title3.weight(.medium))
             } else if engine.currentStep.phase == .warmup {
@@ -157,7 +157,7 @@ struct WorkoutView: View {
                 .font(.largeTitle.bold())
                 .multilineTextAlignment(.center)
 
-            Text("\(engine.configuration.workIntervalCount) arbejdsintervaller · \(engine.totalDuration.shortDurationText)")
+            Text("\(engine.configuration.workIntervalCount) arbejdsintervaller · \(engine.configuration.durationWithoutWarmup.shortDurationText)")
                 .font(.title3)
                 .foregroundStyle(.white.opacity(0.85))
 

@@ -24,7 +24,7 @@ struct DurationPickerView: View {
     }
 
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: 8) {
             Picker("Minutter", selection: minutes) {
                 ForEach(0..<60, id: \.self) { minute in
                     Text("\(minute)").tag(minute)
@@ -45,6 +45,7 @@ struct DurationPickerView: View {
             Text("sek")
                 .foregroundStyle(.secondary)
         }
+        .padding(.horizontal, 20)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
     }

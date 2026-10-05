@@ -51,35 +51,34 @@ final class WorkoutEngine: ObservableObject {
         UIApplication.shared.isIdleTimerDisabled = true
         AudioCueService.shared.prepare()
         playTransitionCue(for: currentStep.phase, previousPhase: nil)
+        WorkoutLiveActivityService.shared.start(
+            step: currentStep,
+            configuration: configuration,
+            remainingSeconds: remainingSeconds
+        )
         startTimer()
 
-        Task {
-            await NotificationScheduler.shared.requestAuthorization()
-            await NotificationScheduler.shared.schedule(
-                steps: steps,
-                elapsedSeconds: 0,
-                settings: settings
-            )
-        }
     }
 
     func togglePause() {
         if isPaused {
             anchorDate = Date().addingTimeInterval(-pausedElapsed)
             isPaused = false
+            WorkoutLiveActivityService.shared.update(
+                step: currentStep,
+                remainingSeconds: remainingSeconds,
+                isPaused: false
+            )
             startTimer()
-            Task {
-                await NotificationScheduler.shared.schedule(
-                    steps: steps,
-                    elapsedSeconds: pausedElapsed,
-                    settings: settings
-                )
-            }
         } else {
             pausedElapsed = elapsedSeconds
             isPaused = true
             stopTimer()
-            Task { await NotificationScheduler.shared.cancel() }
+            WorkoutLiveActivityService.shared.update(
+                step: currentStep,
+                remainingSeconds: remainingSeconds,
+                isPaused: true
+            )
         }
     }
 
@@ -92,21 +91,13 @@ final class WorkoutEngine: ObservableObject {
             anchorDate = Date().addingTimeInterval(-nextElapsed)
         }
         synchronize(elapsed: nextElapsed)
-        if !isPaused {
-            Task {
-                await NotificationScheduler.shared.schedule(
-                    steps: steps,
-                    elapsedSeconds: nextElapsed,
-                    settings: settings
-                )
-            }
-        }
     }
 
     func stop() {
         stopTimer()
         UIApplication.shared.isIdleTimerDisabled = false
-        Task { await NotificationScheduler.shared.cancel() }
+        AudioCueService.shared.stop()
+        Task { await WorkoutLiveActivityService.shared.end() }
     }
 
     func reset() {
@@ -121,14 +112,12 @@ final class WorkoutEngine: ObservableObject {
         anchorDate = .now
         lastCountdownCue = nil
         playTransitionCue(for: steps[0].phase, previousPhase: nil)
+        WorkoutLiveActivityService.shared.update(
+            step: steps[0],
+            remainingSeconds: remainingSeconds,
+            isPaused: false
+        )
         startTimer()
-        Task {
-            await NotificationScheduler.shared.schedule(
-                steps: steps,
-                elapsedSeconds: 0,
-                settings: settings
-            )
-        }
     }
 
     private var elapsedSeconds: TimeInterval {
@@ -178,6 +167,11 @@ final class WorkoutEngine: ObservableObject {
             stepIndex = newIndex
             lastCountdownCue = nil
             playTransitionCue(for: steps[newIndex].phase, previousPhase: previousPhase)
+            WorkoutLiveActivityService.shared.update(
+                step: steps[newIndex],
+                remainingSeconds: newRemaining,
+                isPaused: isPaused
+            )
         }
         remainingSeconds = newRemaining
 
@@ -207,6 +201,6 @@ final class WorkoutEngine: ObservableObject {
         stopTimer()
         UIApplication.shared.isIdleTimerDisabled = false
         AudioCueService.shared.play(.complete, feedback: settings.feedback)
-        Task { await NotificationScheduler.shared.cancel() }
+        Task { await WorkoutLiveActivityService.shared.end() }
     }
 }

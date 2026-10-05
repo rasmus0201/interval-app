@@ -14,12 +14,28 @@ final class AudioCueService {
 
     static let shared = AudioCueService()
 
-    private var player: AVAudioPlayer?
+    private var cuePlayer: AVAudioPlayer?
+    private var backgroundPlayer: AVAudioPlayer?
 
     func prepare() {
         let session = AVAudioSession.sharedInstance()
-        try? session.setCategory(.playback, mode: .default, options: [.duckOthers])
+        try? session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
         try? session.setActive(true)
+
+        guard let url = Bundle.main.url(forResource: Cue.silence.rawValue, withExtension: "wav") else { return }
+        backgroundPlayer = try? AVAudioPlayer(contentsOf: url)
+        backgroundPlayer?.numberOfLoops = -1
+        backgroundPlayer?.volume = 0
+        backgroundPlayer?.prepareToPlay()
+        backgroundPlayer?.play()
+    }
+
+    func stop() {
+        cuePlayer?.stop()
+        backgroundPlayer?.stop()
+        cuePlayer = nil
+        backgroundPlayer = nil
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 
     func play(_ cue: Cue, feedback: AppSettings.Feedback) {
@@ -29,10 +45,17 @@ final class AudioCueService {
         case .vibration:
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         case .tones:
-            guard let url = Bundle.main.url(forResource: cue.rawValue, withExtension: "wav") else { return }
-            player = try? AVAudioPlayer(contentsOf: url)
-            player?.prepareToPlay()
-            player?.play()
+            playTone(cue)
+        case .tonesAndVibration:
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            playTone(cue)
         }
+    }
+
+    private func playTone(_ cue: Cue) {
+        guard let url = Bundle.main.url(forResource: cue.rawValue, withExtension: "wav") else { return }
+        cuePlayer = try? AVAudioPlayer(contentsOf: url)
+        cuePlayer?.prepareToPlay()
+        cuePlayer?.play()
     }
 }
