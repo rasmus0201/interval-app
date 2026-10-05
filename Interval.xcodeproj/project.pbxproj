@@ -14,6 +14,7 @@
 		502D73286906EC96D339E623 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8163BFE48FA81C213F5B9 /* Foundation.framework */; };
 		51417D939A0CA60BB1D88149 /* start-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B9F882D990E39C8A82F2B75 /* start-signal.wav */; };
 		676895593673089377082013 /* WorkoutActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C251E6F6EB1432529C6DE /* WorkoutActivityAttributes.swift */; };
+		6D1AC1979547A391F73740A1 /* WorkoutLiveActivityContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */; };
 		68F68B9623C2C75E9AEFAD12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8163BFE48FA81C213F5B9 /* Foundation.framework */; };
 		734A7E3B320260A9470ADBAC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F7E95F14F464801FD13C6 /* HistoryView.swift */; };
 		74298F985B4BD5E17E06D14F /* rest-end-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 898AA862ED4C0C97A5C41B30 /* rest-end-signal.wav */; };
@@ -30,6 +31,7 @@
 		E23978E62ACB85430DC4E128 /* IntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A3701608037D3421BC138 /* IntervalApp.swift */; };
 		EAB31BDD109F9C0A3741150E /* IntervalWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 696101C06E399E45B545FC35 /* IntervalWidgets.appex */; };
 		EB169DAABA82AD30EB2A4DEF /* WorkoutActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17255970CCAB9A11EEA4A6 /* WorkoutActivityAttributes.swift */; };
+		F26AD95C89FA3936D16E2EB5 /* WorkoutLiveActivityContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */; };
 		F2730A6FB5A0222A8CABA209 /* work-end-signal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8BCB4DDC16F8E88E161DB6BD /* work-end-signal.wav */; };
 		F342E6A86414FE015C5F80C8 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32671BB786DED1FEC093E7A /* DurationPickerView.swift */; };
 		F6F2682C166C54ECE37591CC /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E526CC488FE9469154414A1 /* silence.wav */; };
@@ -82,6 +84,7 @@
 		6A5F7E95F14F464801FD13C6 /* HistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		6B9F882D990E39C8A82F2B75 /* start-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "start-signal.wav"; path = "Sounds/start-signal.wav"; sourceTree = "<group>"; };
 		6E526CC488FE9469154414A1 /* silence.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = silence.wav; path = Sounds/silence.wav; sourceTree = "<group>"; };
+		72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutLiveActivityContent.swift; sourceTree = "<group>"; };
 		7B17255970CCAB9A11EEA4A6 /* WorkoutActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WorkoutActivityAttributes.swift; path = ../Interval/WorkoutActivityAttributes.swift; sourceTree = "<group>"; };
 		83AB89C5CDE7D4B9579007B3 /* blop.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = blop.wav; path = Sounds/blop.wav; sourceTree = "<group>"; };
 		898AA862ED4C0C97A5C41B30 /* rest-end-signal.wav */ = {isa = PBXFileReference; includeInIndex = 1; name = "rest-end-signal.wav"; path = "Sounds/rest-end-signal.wav"; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 				4DBC2A5DC0B0C550290C330B /* RootView.swift */,
 				0C081D8D0FF780A87C3ED119 /* SettingsView.swift */,
 				DD6C251E6F6EB1432529C6DE /* WorkoutActivityAttributes.swift */,
+				72CB9E0700AD6292A447125F /* WorkoutLiveActivityContent.swift */,
 				E76D7189F867E5947985C80E /* WorkoutEngine.swift */,
 				3EA89A7110306CE9F7B18418 /* WorkoutLiveActivityService.swift */,
 				1D957EA626C82E2724751BA7 /* WorkoutSetupView.swift */,
@@ -345,6 +349,7 @@
 				3BC21AA1DE5BFB78C76A298C /* RootView.swift in Sources */,
 				9A8F95643D48B0A775C302FC /* SettingsView.swift in Sources */,
 				676895593673089377082013 /* WorkoutActivityAttributes.swift in Sources */,
+				6D1AC1979547A391F73740A1 /* WorkoutLiveActivityContent.swift in Sources */,
 				D5ADA76C62FD40FE4EBA483C /* WorkoutEngine.swift in Sources */,
 				A823B3FBA2A76A435E84BE18 /* WorkoutLiveActivityService.swift in Sources */,
 				9BA78285286DCEDBC0936F72 /* WorkoutSetupView.swift in Sources */,
@@ -367,6 +372,7 @@
 				774ECC3A333890520C77F1FB /* IntervalWidgetsBundle.swift in Sources */,
 				FDC18A92932C15525C34C4E5 /* WorkoutLiveActivityWidget.swift in Sources */,
 				EB169DAABA82AD30EB2A4DEF /* WorkoutActivityAttributes.swift in Sources */,
+				F26AD95C89FA3936D16E2EB5 /* WorkoutLiveActivityContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

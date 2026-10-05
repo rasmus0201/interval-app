@@ -61,6 +61,24 @@ final class WorkoutTimelineTests: XCTestCase {
     }
 
     @MainActor
+    func testLiveActivityRemainingDurationCoversTheWholeWorkout() {
+        let configuration = WorkoutConfiguration(
+            workSeconds: 15,
+            restSeconds: 10,
+            repetitions: 1,
+            rounds: 2,
+            roundRestSeconds: 0
+        )
+        var settings = AppSettings()
+        settings.startCountdownSeconds = 0
+
+        let engine = WorkoutEngine(configuration: configuration, settings: settings)
+
+        XCTAssertEqual(engine.remainingSeconds, 15)
+        XCTAssertEqual(engine.remainingDuration, 40)
+    }
+
+    @MainActor
     func testPersistsHistoryAndLoadsItsConfiguration() {
         let suiteName = "WorkoutTimelineTests.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: suiteName)!

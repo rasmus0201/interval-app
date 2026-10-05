@@ -8,7 +8,7 @@ final class WorkoutLiveActivityService {
     private var activity: Activity<WorkoutActivityAttributes>?
     private var startTask: Task<Void, Never>?
 
-    func start(step: WorkoutStep, configuration: WorkoutConfiguration, remainingSeconds: Int) {
+    func start(configuration: WorkoutConfiguration, remainingSeconds: Int) {
         let previousStartTask = startTask
         startTask = Task {
             await previousStartTask?.value
@@ -20,18 +20,18 @@ final class WorkoutLiveActivityService {
                 rounds: configuration.rounds
             )
             let content = ActivityContent(
-                state: state(step: step, remainingSeconds: remainingSeconds, isPaused: false),
-                staleDate: Date.now.addingTimeInterval(TimeInterval(remainingSeconds + 5)),
+                state: state(remainingSeconds: remainingSeconds, isPaused: false),
+                staleDate: Date.now.addingTimeInterval(TimeInterval(remainingSeconds)),
                 relevanceScore: 100
             )
             activity = try? Activity.request(attributes: attributes, content: content)
         }
     }
 
-    func update(step: WorkoutStep, remainingSeconds: Int, isPaused: Bool) {
+    func update(remainingSeconds: Int, isPaused: Bool) {
         let content = ActivityContent(
-            state: state(step: step, remainingSeconds: remainingSeconds, isPaused: isPaused),
-            staleDate: isPaused ? nil : Date.now.addingTimeInterval(TimeInterval(remainingSeconds + 5)),
+            state: state(remainingSeconds: remainingSeconds, isPaused: isPaused),
+            staleDate: isPaused ? nil : Date.now.addingTimeInterval(TimeInterval(remainingSeconds)),
             relevanceScore: 100
         )
         let pendingStart = startTask
@@ -51,16 +51,15 @@ final class WorkoutLiveActivityService {
     }
 
     private func state(
-        step: WorkoutStep,
         remainingSeconds: Int,
         isPaused: Bool
     ) -> WorkoutActivityAttributes.ContentState {
         WorkoutActivityAttributes.ContentState(
-            phase: step.phase.rawValue,
+            phase: "workout",
             endsAt: Date.now.addingTimeInterval(TimeInterval(remainingSeconds)),
             remainingSeconds: remainingSeconds,
-            repetition: step.repetition,
-            round: step.round,
+            repetition: 0,
+            round: 0,
             isPaused: isPaused
         )
     }

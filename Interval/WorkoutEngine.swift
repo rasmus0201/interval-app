@@ -44,6 +44,10 @@ final class WorkoutEngine: ObservableObject {
         steps.reduce(0) { $0 + $1.duration }
     }
 
+    var remainingDuration: Int {
+        remainingSeconds + steps.dropFirst(stepIndex + 1).reduce(0) { $0 + $1.duration }
+    }
+
     func start() {
         guard !didStart, !steps.isEmpty else { return }
         didStart = true
@@ -52,9 +56,8 @@ final class WorkoutEngine: ObservableObject {
         AudioCueService.shared.prepare()
         playTransitionCue(for: currentStep.phase, previousPhase: nil)
         WorkoutLiveActivityService.shared.start(
-            step: currentStep,
             configuration: configuration,
-            remainingSeconds: remainingSeconds
+            remainingSeconds: remainingDuration
         )
         startTimer()
 
@@ -65,8 +68,7 @@ final class WorkoutEngine: ObservableObject {
             anchorDate = Date().addingTimeInterval(-pausedElapsed)
             isPaused = false
             WorkoutLiveActivityService.shared.update(
-                step: currentStep,
-                remainingSeconds: remainingSeconds,
+                remainingSeconds: remainingDuration,
                 isPaused: false
             )
             startTimer()
@@ -75,8 +77,7 @@ final class WorkoutEngine: ObservableObject {
             isPaused = true
             stopTimer()
             WorkoutLiveActivityService.shared.update(
-                step: currentStep,
-                remainingSeconds: remainingSeconds,
+                remainingSeconds: remainingDuration,
                 isPaused: true
             )
         }
@@ -91,6 +92,10 @@ final class WorkoutEngine: ObservableObject {
             anchorDate = Date().addingTimeInterval(-nextElapsed)
         }
         synchronize(elapsed: nextElapsed)
+        WorkoutLiveActivityService.shared.update(
+            remainingSeconds: remainingDuration,
+            isPaused: isPaused
+        )
     }
 
     func stop() {
@@ -113,8 +118,7 @@ final class WorkoutEngine: ObservableObject {
         lastCountdownCue = nil
         playTransitionCue(for: steps[0].phase, previousPhase: nil)
         WorkoutLiveActivityService.shared.update(
-            step: steps[0],
-            remainingSeconds: remainingSeconds,
+            remainingSeconds: remainingDuration,
             isPaused: false
         )
         startTimer()
@@ -167,11 +171,6 @@ final class WorkoutEngine: ObservableObject {
             stepIndex = newIndex
             lastCountdownCue = nil
             playTransitionCue(for: steps[newIndex].phase, previousPhase: previousPhase)
-            WorkoutLiveActivityService.shared.update(
-                step: steps[newIndex],
-                remainingSeconds: newRemaining,
-                isPaused: isPaused
-            )
         }
         remainingSeconds = newRemaining
 

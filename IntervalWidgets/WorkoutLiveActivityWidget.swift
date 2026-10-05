@@ -5,97 +5,59 @@ import WidgetKit
 struct WorkoutLiveActivityWidget: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: WorkoutActivityAttributes.self) { context in
-            HStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Label(phaseTitle(context.state.phase), systemImage: phaseSymbol(context.state.phase))
-                        .font(.headline)
-                    Text(detailText(context))
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                Spacer(minLength: 12)
-                countdown(context.state)
-                    .font(.title.bold().monospacedDigit())
-                    .fixedSize(horizontal: true, vertical: false)
-                    .layoutPriority(1)
-            }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 16)
-            .activityBackgroundTint(phaseColor(context.state.phase).opacity(0.18))
-            .activitySystemActionForegroundColor(phaseColor(context.state.phase))
+            WorkoutLiveActivityContent(
+                repetitions: context.attributes.repetitions,
+                rounds: context.attributes.rounds,
+                endsAt: context.state.endsAt,
+                remainingSeconds: context.state.remainingSeconds,
+                isPaused: context.state.isPaused,
+                isStale: context.isStale
+            )
+            .activityBackgroundTint(Color.orange.opacity(0.16))
+            .activitySystemActionForegroundColor(.orange)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Label(phaseTitle(context.state.phase), systemImage: phaseSymbol(context.state.phase))
+                    Label("Træning", systemImage: "figure.run")
                         .font(.headline)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    countdown(context.state)
+                    countdown(context)
                         .font(.headline.monospacedDigit())
                         .fixedSize(horizontal: true, vertical: false)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text(detailText(context))
+                    Text("\(context.attributes.rounds) runder · \(context.attributes.repetitions) gentagelser")
                         .font(.caption)
                 }
             } compactLeading: {
-                Image(systemName: phaseSymbol(context.state.phase))
-                    .foregroundStyle(phaseColor(context.state.phase))
+                Image(systemName: "figure.run")
+                    .foregroundStyle(.orange)
             } compactTrailing: {
-                countdown(context.state)
+                countdown(context)
                     .monospacedDigit()
                     .frame(width: 48, alignment: .trailing)
             } minimal: {
-                Image(systemName: phaseSymbol(context.state.phase))
-                    .foregroundStyle(phaseColor(context.state.phase))
+                Image(systemName: "figure.run")
+                    .foregroundStyle(.orange)
             }
         }
     }
 
     @ViewBuilder
-    private func countdown(_ state: WorkoutActivityAttributes.ContentState) -> some View {
-        if state.isPaused {
-            Text(timerText(state.remainingSeconds))
+    private func countdown(_ context: ActivityViewContext<WorkoutActivityAttributes>) -> some View {
+        if context.isStale {
+            Text("Færdig")
+        } else if context.state.isPaused {
+            Text(timerText(context.state.remainingSeconds))
         } else {
-            Text(timerInterval: Date.now...max(state.endsAt, Date.now), countsDown: true)
+            Text(
+                timerInterval: context.state.endsAt.addingTimeInterval(
+                    -TimeInterval(max(context.state.remainingSeconds, 1))
+                )...context.state.endsAt,
+                countsDown: true
+            )
         }
-    }
-
-    private func phaseTitle(_ phase: String) -> String {
-        switch phase {
-        case "warmup": "Gør klar"
-        case "work": "Arbejde"
-        case "rest": "Hvile"
-        case "roundRest": "Rundepause"
-        default: "Interval"
-        }
-    }
-
-    private func phaseSymbol(_ phase: String) -> String {
-        switch phase {
-        case "warmup": "figure.run"
-        case "work": "bolt.fill"
-        case "rest": "pause.fill"
-        case "roundRest": "arrow.trianglehead.2.clockwise.rotate.90"
-        default: "timer"
-        }
-    }
-
-    private func phaseColor(_ phase: String) -> Color {
-        switch phase {
-        case "warmup": .indigo
-        case "work": .orange
-        case "rest": .blue
-        case "roundRest": .teal
-        default: .orange
-        }
-    }
-
-    private func detailText(_ context: ActivityViewContext<WorkoutActivityAttributes>) -> String {
-        if context.state.phase == "warmup" {
-            return "Læg telefonen i lommen"
-        }
-        return "Runde \(context.state.round) / \(context.attributes.rounds) · Gentagelse \(context.state.repetition) / \(context.attributes.repetitions)"
     }
 
     private func timerText(_ seconds: Int) -> String {
