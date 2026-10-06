@@ -62,7 +62,17 @@ struct RootView: View {
         }
 #if DEBUG
         .onAppear {
-            guard ProcessInfo.processInfo.arguments.contains("--live-activity-test"),
+            let arguments = ProcessInfo.processInfo.arguments
+            if arguments.contains("--screenshot-history") {
+                selectedTab = .history
+            }
+            if arguments.contains("--screenshot-workout") {
+                var settings = store.settings
+                settings.startCountdownSeconds = 0
+                settings.feedback = .silent
+                session = WorkoutSession(configuration: store.configuration, settings: settings)
+            }
+            guard arguments.contains("--live-activity-test"),
                   !didStartLiveActivityTest else { return }
             didStartLiveActivityTest = true
             session = Self.liveActivityTestSession

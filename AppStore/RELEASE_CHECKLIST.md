@@ -18,7 +18,7 @@
 - Angiv privatlivspolitik og svar, at appen ikke indsamler data.
 - Angiv kategorierne Sundhed og fitness samt Hjælpeværktøjer.
 - Udfyld aldersvurderingen.
-- Upload skærmbilleder, som viser opsætning, aktiv træning og historik.
+- Upload skærmbillederne i `AppStore/Screenshots`. De viser opsætning, aktiv træning og historik. Kør `Tools/capture_screenshots.sh` for at tage dem igen.
 - Indsæt App Review-noterne om baggrundslyd og Live Activity.
 - Upload arkivet fra Xcode Organizer.
 - Vælg buildet, og send det til App Review.

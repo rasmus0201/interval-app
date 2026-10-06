@@ -1,0 +1,64 @@
+#!/bin/sh
+# Captures App Store screenshots (6.9" iPhone) into AppStore/Screenshots.
+set -eu
+
+DEVICE_NAME="${DEVICE_NAME:-iPhone 17 Pro Max}"
+BUNDLE_ID="com.bundsgaard.kyclaro"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+OUT="$ROOT/AppStore/Screenshots"
+DERIVED="$(mktemp -d)"
+
+UDID="$(xcrun simctl list devices available | grep "    $DEVICE_NAME (" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')"
+[ -n "$UDID" ] || { echo "Simulator '$DEVICE_NAME' not found" >&2; exit 1; }
+
+xcrun simctl boot "$UDID" 2>/dev/null || true
+xcrun simctl bootstatus "$UDID" >/dev/null
+xcrun simctl ui "$UDID" appearance dark
+xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState discharging --batteryLevel 100 \
+    --cellularBars 4 --wifiBars 3 --dataNetwork wifi
+
+xcodebuild -project "$ROOT/Interval.xcodeproj" -scheme Interval -configuration Debug \
+    -destination "id=$UDID" -derivedDataPath "$DERIVED" build -quiet
+xcrun simctl install "$UDID" "$DERIVED/Build/Products/Debug-iphonesimulator/Interval.app"
+
+# Sample history passed through the UserDefaults argument domain; nothing is persisted.
+HISTORY="$(python3 - <<'EOF'
+import json, time, uuid
+now = time.time() - 978307200  # Seconds since 2001-01-01, the JSONEncoder default date format.
+workouts = [
+    (0.1, 45, 15, 8, 3, 60),
+    (1.0, 30, 10, 10, 2, 0),
+    (2.1, 40, 20, 6, 4, 30),
+    (3.0, 45, 15, 8, 3, 60),
+    (5.2, 20, 10, 8, 1, 0),
+    (6.0, 60, 30, 5, 3, 60),
+    (8.1, 45, 15, 8, 3, 60),
+]
+entries = [{
+    "id": str(uuid.uuid4()).upper(),
+    "completedAt": now - days * 86400,
+    "startCountdownSeconds": 10,
+    "configuration": {"workSeconds": w, "restSeconds": r, "repetitions": reps,
+                      "rounds": rounds, "roundRestSeconds": rr},
+} for days, w, r, reps, rounds, rr in workouts]
+print("<" + json.dumps(entries).encode().hex() + ">")
+EOF
+)"
+
+capture() {
+    name="$1"; delay="$2"; shift 2
+    xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
+    xcrun simctl launch "$UDID" "$BUNDLE_ID" -workoutHistory "$HISTORY" "$@" >/dev/null
+    sleep "$delay"
+    xcrun simctl io "$UDID" screenshot "$OUT/$name.png" >/dev/null
+    echo "Saved $OUT/$name.png"
+}
+
+mkdir -p "$OUT"
+capture 01-setup 3
+capture 02-workout 5 --screenshot-workout
+capture 03-history 3 --screenshot-history
+
+xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
+xcrun simctl status_bar "$UDID" clear
+rm -rf "$DERIVED"
