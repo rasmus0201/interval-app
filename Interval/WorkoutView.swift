@@ -157,7 +157,7 @@ struct WorkoutView: View {
                 .font(.largeTitle.bold())
                 .multilineTextAlignment(.center)
 
-            Text("\(engine.configuration.workIntervalCount) arbejdsintervaller · \(engine.configuration.durationWithoutWarmup.shortDurationText)")
+            Text("\(engine.configuration.workIntervalCount.counted("arbejdsinterval", "arbejdsintervaller")) · \(engine.configuration.durationWithoutWarmup.shortDurationText)")
                 .font(.title3)
                 .foregroundStyle(.white.opacity(0.85))
 

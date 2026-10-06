@@ -79,7 +79,7 @@ struct WorkoutSetupView: View {
 
     private var workoutSummary: String {
         let duration = store.configuration.durationWithoutWarmup
-        return "\(duration.shortDurationText) · \(store.configuration.workIntervalCount) arbejdsintervaller"
+        return "\(duration.shortDurationText) · \(store.configuration.workIntervalCount.counted("arbejdsinterval", "arbejdsintervaller"))"
     }
 
     private func valueRow(title: String, value: String) -> some View {

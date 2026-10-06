@@ -54,7 +54,7 @@ private struct HistoryRow: View {
             }
             Text("\(entry.configuration.workSeconds.timerText) arbejde · \(entry.configuration.restSeconds.timerText) hvile")
                 .foregroundStyle(.secondary)
-            Text("\(entry.configuration.repetitions) gentagelser · \(entry.configuration.rounds) runder")
+            Text("\(entry.configuration.repetitions.counted("gentagelse", "gentagelser")) · \(entry.configuration.rounds.counted("runde", "runder"))")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }

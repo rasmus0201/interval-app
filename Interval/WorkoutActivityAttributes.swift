@@ -14,3 +14,10 @@ struct WorkoutActivityAttributes: ActivityAttributes {
     let repetitions: Int
     let rounds: Int
 }
+
+// Lives here because this file is compiled into both the app and the widget.
+extension Int {
+    func counted(_ singular: String, _ plural: String) -> String {
+        "\(self) \(self == 1 ? singular : plural)"
+    }
+}

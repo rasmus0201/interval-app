@@ -27,7 +27,7 @@ struct WorkoutLiveActivityWidget: Widget {
                         .frame(width: 72, alignment: .trailing)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("\(context.attributes.rounds) runder · \(context.attributes.repetitions) gentagelser")
+                    Text("\(context.attributes.rounds.counted("runde", "runder")) · \(context.attributes.repetitions.counted("gentagelse", "gentagelser"))")
                         .font(.caption)
                 }
             } compactLeading: {

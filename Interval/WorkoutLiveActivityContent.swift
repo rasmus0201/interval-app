@@ -16,7 +16,7 @@ struct WorkoutLiveActivityContent: View {
                     Text("Træning")
                 }
                 .font(.headline)
-                Text("\(rounds) runder · \(repetitions) gentagelser")
+                Text("\(rounds.counted("runde", "runder")) · \(repetitions.counted("gentagelse", "gentagelser"))")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
