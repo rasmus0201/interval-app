@@ -12,12 +12,12 @@ struct WorkoutSetupView: View {
             Form {
                 Section {
                     DurationLink(
-                        title: "Arbejde",
+                        title: "Work",
                         seconds: $store.configuration.workSeconds,
                         minimumSeconds: 1
                     )
                     DurationLink(
-                        title: "Hvile",
+                        title: "Rest",
                         seconds: $store.configuration.restSeconds,
                         minimumSeconds: 0
                     )
@@ -25,41 +25,41 @@ struct WorkoutSetupView: View {
 
                 Section {
                     Stepper(value: $store.configuration.repetitions, in: 1...99) {
-                        valueRow(title: "Gentagelser", value: "\(store.configuration.repetitions)")
+                        valueRow(title: "Reps", value: "\(store.configuration.repetitions)")
                     }
                     Stepper(value: $store.configuration.rounds, in: 1...50) {
-                        valueRow(title: "Runder", value: "\(store.configuration.rounds)")
+                        valueRow(title: "Rounds", value: "\(store.configuration.rounds)")
                     }
                 } footer: {
-                    Text("Gentagelser køres før hvilen mellem runder.")
+                    Text("All reps in a round run before the rest between rounds.")
                 }
 
                 Section {
                     DurationLink(
-                        title: "Ekstra rundepause",
+                        title: "Extra round break",
                         seconds: $store.configuration.roundRestSeconds,
                         minimumSeconds: 0
                     )
                 } footer: {
                     VStack(spacing: 6) {
-                        Text("Lægges til hviletiden mellem runder.")
-                        Text(workoutSummary)
+                        Text("Added to the rest between rounds.")
+                        Text(store.configuration.summaryText)
                     }
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 }
             }
-            .navigationTitle("Træning")
+            .navigationTitle("Workout")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Indstillinger", systemImage: "gearshape") {
+                    Button("Settings", systemImage: "gearshape") {
                         showsSettings = true
                     }
                 }
             }
             .safeAreaInset(edge: .bottom) {
                 Button(action: onStart) {
-                    Text("Start træning")
+                    Text("Start workout")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
@@ -77,12 +77,7 @@ struct WorkoutSetupView: View {
         }
     }
 
-    private var workoutSummary: String {
-        let duration = store.configuration.durationWithoutWarmup
-        return "\(duration.shortDurationText) · \(store.configuration.workIntervalCount.counted("arbejdsinterval", "arbejdsintervaller"))"
-    }
-
-    private func valueRow(title: String, value: String) -> some View {
+    private func valueRow(title: LocalizedStringKey, value: String) -> some View {
         Group {
             if dynamicTypeSize.isAccessibilitySize {
                 VStack(alignment: .leading, spacing: 2) {
@@ -107,7 +102,7 @@ struct WorkoutSetupView: View {
 private struct DurationLink: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    let title: String
+    let title: LocalizedStringKey
     @Binding var seconds: Int
     let minimumSeconds: Int
 

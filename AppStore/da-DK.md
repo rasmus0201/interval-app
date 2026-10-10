@@ -47,9 +47,9 @@ Besvar alle indholdsspørgsmål med nej, hvis appens indhold ikke ændres. Den f
 
 ## Webadresser
 
-- Marketing: `https://rasmus0201.github.io/interval-app/`
-- Support: `https://rasmus0201.github.io/interval-app/support.html`
-- Privatlivspolitik: `https://rasmus0201.github.io/interval-app/privacy.html`
+- Marketing: `https://rasmusbundsgaard.dk/interval-app/da/`
+- Support: `https://rasmusbundsgaard.dk/interval-app/da/support.html`
+- Privatlivspolitik: `https://rasmusbundsgaard.dk/interval-app/da/privacy.html`
 
 ## App Privacy
 

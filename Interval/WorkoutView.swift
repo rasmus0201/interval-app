@@ -41,21 +41,21 @@ struct WorkoutView: View {
             completionWasRecorded = true
             onComplete()
         }
-        .alert("Stop træningen?", isPresented: $showsStopConfirmation) {
-            Button("Fortsæt", role: .cancel) {}
+        .alert("Stop the workout?", isPresented: $showsStopConfirmation) {
+            Button("Continue", role: .cancel) {}
             Button("Stop", role: .destructive) {
                 engine.stop()
                 dismiss()
             }
         } message: {
-            Text("Træningen bliver ikke gemt i historikken.")
+            Text("The workout won't be saved to history.")
         }
     }
 
     private var activeWorkoutView: some View {
         VStack(spacing: 0) {
             HStack {
-                Button("Luk", systemImage: "xmark") {
+                Button("Close", systemImage: "xmark") {
                     showsStopConfirmation = true
                 }
                 .labelStyle(.iconOnly)
@@ -65,11 +65,11 @@ struct WorkoutView: View {
                 Spacer()
 
                 if engine.currentStep.phase != .warmup {
-                    Text("Runde \(engine.currentStep.round) / \(engine.configuration.rounds)")
+                    Text("Round \(engine.currentStep.round) / \(engine.configuration.rounds)")
                         .font(.headline)
                 }
 
-                Button("Nulstil", systemImage: "arrow.counterclockwise") {
+                Button("Restart", systemImage: "arrow.counterclockwise") {
                     engine.reset()
                 }
                 .labelStyle(.iconOnly)
@@ -95,16 +95,16 @@ struct WorkoutView: View {
                 .minimumScaleFactor(0.65)
                 .contentTransition(.numericText(countsDown: true))
                 .animation(reduceMotion ? nil : .snappy, value: engine.remainingSeconds)
-                .accessibilityLabel("\(engine.remainingSeconds) sekunder tilbage")
+                .accessibilityLabel("\(engine.remainingSeconds) seconds remaining")
 
             if engine.currentStep.phase == .work {
-                Text("Gentagelse \(engine.currentStep.repetition) / \(engine.configuration.repetitions)")
+                Text("Rep \(engine.currentStep.repetition) / \(engine.configuration.repetitions)")
                     .font(.title3.weight(.medium))
             } else if engine.currentStep.phase == .warmup {
-                Text("Læg telefonen i lommen")
+                Text("Put your phone in your pocket")
                     .font(.title3.weight(.medium))
             } else {
-                Text("Næste: Runde \(min(engine.currentStep.round + 1, engine.configuration.rounds))")
+                Text("Next: Round \(min(engine.currentStep.round + 1, engine.configuration.rounds))")
                     .font(.title3.weight(.medium))
             }
 
@@ -120,7 +120,7 @@ struct WorkoutView: View {
                     engine.togglePause()
                 } label: {
                     controlLabel(
-                        engine.isPaused ? "Fortsæt" : "Pause",
+                        engine.isPaused ? "Resume" : "Pause",
                         systemImage: engine.isPaused ? "play.fill" : "pause.fill"
                     )
                     .frame(maxWidth: .infinity)
@@ -133,7 +133,7 @@ struct WorkoutView: View {
                 Button {
                     engine.skip()
                 } label: {
-                    controlLabel("Spring over", systemImage: "forward.fill")
+                    controlLabel("Skip", systemImage: "forward.fill")
                         .frame(maxWidth: .infinity)
                         .frame(height: 54)
                 }
@@ -153,17 +153,17 @@ struct WorkoutView: View {
                 .font(.system(size: 72))
                 .accessibilityHidden(true)
 
-            Text("Træning gennemført")
+            Text("Workout complete")
                 .font(.largeTitle.bold())
                 .multilineTextAlignment(.center)
 
-            Text("\(engine.configuration.workIntervalCount.counted("arbejdsinterval", "arbejdsintervaller")) · \(engine.configuration.durationWithoutWarmup.shortDurationText)")
+            Text(engine.configuration.summaryText)
                 .font(.title3)
                 .foregroundStyle(.white.opacity(0.85))
 
             Spacer()
 
-            Button("Færdig") {
+            Button("Done") {
                 dismiss()
             }
             .font(.headline)
@@ -187,7 +187,7 @@ struct WorkoutView: View {
     }
 
     @ViewBuilder
-    private func controlLabel(_ title: String, systemImage: String) -> some View {
+    private func controlLabel(_ title: LocalizedStringKey, systemImage: String) -> some View {
         if dynamicTypeSize.isAccessibilitySize {
             Image(systemName: systemImage)
                 .font(.title2)

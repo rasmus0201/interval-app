@@ -13,10 +13,10 @@ struct WorkoutLiveActivityContent: View {
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 8) {
                     Image(systemName: "figure.run")
-                    Text("Træning")
+                    Text("Workout")
                 }
                 .font(.headline)
-                Text("\(rounds.counted("runde", "runder")) · \(repetitions.counted("gentagelse", "gentagelser"))")
+                Text(verbatim: "\(rounds.roundCountText) · \(repetitions.repetitionCountText)")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
@@ -37,7 +37,7 @@ struct WorkoutLiveActivityContent: View {
     @ViewBuilder
     private var countdown: some View {
         if isStale {
-            Text("Færdig")
+            Text("Done")
         } else if isPaused {
             Text(timerText(remainingSeconds))
         } else {

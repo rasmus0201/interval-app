@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DurationPickerView: View {
-    let title: String
+    let title: LocalizedStringKey
     @Binding var seconds: Int
     let minimumSeconds: Int
 
@@ -25,7 +25,7 @@ struct DurationPickerView: View {
 
     var body: some View {
         HStack(spacing: 8) {
-            Picker("Minutter", selection: minutes) {
+            Picker("Minutes", selection: minutes) {
                 ForEach(0..<60, id: \.self) { minute in
                     Text("\(minute)").tag(minute)
                 }
@@ -35,14 +35,14 @@ struct DurationPickerView: View {
             Text("min")
                 .foregroundStyle(.secondary)
 
-            Picker("Sekunder", selection: remainingSeconds) {
+            Picker("Seconds", selection: remainingSeconds) {
                 ForEach(0..<60, id: \.self) { second in
                     Text(String(format: "%02d", second)).tag(second)
                 }
             }
             .pickerStyle(.wheel)
 
-            Text("sek")
+            Text("sec")
                 .foregroundStyle(.secondary)
         }
         .padding(.horizontal, 20)

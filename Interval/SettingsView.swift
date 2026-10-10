@@ -9,46 +9,46 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Opvarmningstid") {
-                    Picker("Start-countdown", selection: $store.settings.startCountdownSeconds) {
+                Section("Warm-up") {
+                    Picker("Start countdown", selection: $store.settings.startCountdownSeconds) {
                         ForEach(countdownOptions, id: \.self) { seconds in
-                            Text(seconds == 0 ? "Fra" : "\(seconds) sek").tag(seconds)
+                            Text(seconds == 0 ? String(localized: "Off") : seconds.shortDurationText).tag(seconds)
                         }
                     }
                     .pickerStyle(.segmented)
                 }
 
                 Section {
-                    Toggle("Biplyde", isOn: $store.settings.tonesEnabled)
+                    Toggle("Beeps", isOn: $store.settings.tonesEnabled)
 
                     if store.settings.tonesEnabled {
                         VStack(spacing: 8) {
                             HStack {
-                                Text("Lydstyrke")
+                                Text("Volume")
                                 Spacer()
                                 Text(store.settings.cueVolume, format: .percent.precision(.fractionLength(0)))
                                     .foregroundStyle(.secondary)
                                     .monospacedDigit()
                             }
                             Slider(value: $store.settings.cueVolume, in: 0...1, step: 0.05)
-                                .accessibilityLabel("Lydstyrke")
+                                .accessibilityLabel("Volume")
                         }
                     }
                 } header: {
-                    Text("Lyd")
+                    Text("Sound")
                 } footer: {
-                    Text("100 % bruger telefonens fulde medielydstyrke. Biptoner afspilles også, når telefonen er låst eller på lydløs.")
+                    Text("At 100%, beeps use the phone's full media volume. They also play when the phone is locked or on silent.")
                 }
 
                 Section("Vibration") {
                     Toggle("Vibration", isOn: $store.settings.vibrationEnabled)
                 }
             }
-            .navigationTitle("Indstillinger")
+            .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Færdig") { dismiss() }
+                    Button("Done") { dismiss() }
                 }
             }
         }

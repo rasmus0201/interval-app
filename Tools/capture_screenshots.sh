@@ -1,5 +1,5 @@
 #!/bin/sh
-# Captures App Store screenshots (6.9" iPhone) into AppStore/Screenshots.
+# Captures App Store screenshots (6.9" iPhone) in English and Danish into AppStore/Screenshots.
 set -eu
 
 DEVICE_NAME="${DEVICE_NAME:-iPhone 17 Pro Max}"
@@ -46,18 +46,22 @@ EOF
 )"
 
 capture() {
-    name="$1"; delay="$2"; shift 2
+    folder="$1"; language="$2"; locale="$3"; name="$4"; delay="$5"; shift 5
+    mkdir -p "$OUT/$folder"
     xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
-    xcrun simctl launch "$UDID" "$BUNDLE_ID" -workoutHistory "$HISTORY" "$@" >/dev/null
+    xcrun simctl launch "$UDID" "$BUNDLE_ID" -AppleLanguages "($language)" -AppleLocale "$locale" \
+        -workoutHistory "$HISTORY" "$@" >/dev/null
     sleep "$delay"
-    xcrun simctl io "$UDID" screenshot "$OUT/$name.png" >/dev/null
-    echo "Saved $OUT/$name.png"
+    xcrun simctl io "$UDID" screenshot "$OUT/$folder/$name.png" >/dev/null
+    echo "Saved $OUT/$folder/$name.png"
 }
 
-mkdir -p "$OUT"
-capture 01-setup 3
-capture 02-workout 5 --screenshot-workout
-capture 03-history 3 --screenshot-history
+for target in "en-US en en_US" "da-DK da da_DK"; do
+    set -- $target
+    capture "$@" 01-setup 3
+    capture "$@" 02-workout 5 --screenshot-workout
+    capture "$@" 03-history 3 --screenshot-history
+done
 
 xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
 xcrun simctl status_bar "$UDID" clear

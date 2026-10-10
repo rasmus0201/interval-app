@@ -18,7 +18,7 @@ struct WorkoutLiveActivityWidget: Widget {
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Label("Træning", systemImage: "figure.run")
+                    Label("Workout", systemImage: "figure.run")
                         .font(.headline)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
@@ -27,7 +27,7 @@ struct WorkoutLiveActivityWidget: Widget {
                         .frame(width: 72, alignment: .trailing)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("\(context.attributes.rounds.counted("runde", "runder")) · \(context.attributes.repetitions.counted("gentagelse", "gentagelser"))")
+                    Text(verbatim: "\(context.attributes.rounds.roundCountText) · \(context.attributes.repetitions.repetitionCountText)")
                         .font(.caption)
                 }
             } compactLeading: {
@@ -47,7 +47,7 @@ struct WorkoutLiveActivityWidget: Widget {
     @ViewBuilder
     private func countdown(_ context: ActivityViewContext<WorkoutActivityAttributes>) -> some View {
         if context.isStale {
-            Text("Færdig")
+            Text("Done")
         } else if context.state.isPaused {
             Text(timerText(context.state.remainingSeconds))
         } else {

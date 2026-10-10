@@ -29,6 +29,6 @@ ruby Tools/generate_project.rb
 
 ## App Store release
 
-The `AppStore` directory contains Danish metadata and a release checklist. The app includes a privacy manifest and does not collect data. Version and build numbers use `MARKETING_VERSION` and `CURRENT_PROJECT_VERSION` in the project Build Settings.
+The `AppStore` directory contains App Store metadata in English (U.S., the primary language) and Danish, plus a release checklist. The app includes a privacy manifest and does not collect data. Version and build numbers use `MARKETING_VERSION` and `CURRENT_PROJECT_VERSION` in the project Build Settings.
 
-The static landing page is in `docs`. The GitHub Pages workflow publishes it from `main` after Pages is enabled with **GitHub Actions** as its source. Replace the publisher's legal name before the App Store submission.
+The static landing page is in `docs`. English is the default at the site root, and the Danish pages are in `docs/da`. The GitHub Pages workflow publishes it from `main` after Pages is enabled with **GitHub Actions** as its source. Replace the publisher's legal name before the App Store submission.

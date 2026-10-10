@@ -9,9 +9,9 @@ struct HistoryView: View {
             Group {
                 if store.history.isEmpty {
                     ContentUnavailableView(
-                        "Ingen træninger endnu",
+                        "No workouts yet",
                         systemImage: "figure.run",
-                        description: Text("Gennemfør en træning, så vises den her.")
+                        description: Text("Finished workouts appear here.")
                     )
                 } else {
                     List {
@@ -24,7 +24,7 @@ struct HistoryView: View {
                                 HistoryRow(entry: entry)
                             }
                             .swipeActions(edge: .leading) {
-                                Button("Indlæs", systemImage: "arrow.down.doc") {
+                                Button("Load", systemImage: "arrow.down.doc") {
                                     onLoad(entry)
                                 }
                                 .tint(.orange)
@@ -34,7 +34,7 @@ struct HistoryView: View {
                     }
                 }
             }
-            .navigationTitle("Historik")
+            .navigationTitle("History")
         }
     }
 }
@@ -52,9 +52,9 @@ private struct HistoryRow: View {
                     .foregroundStyle(.secondary)
                     .monospacedDigit()
             }
-            Text("\(entry.configuration.workSeconds.timerText) arbejde · \(entry.configuration.restSeconds.timerText) hvile")
+            Text("\(entry.configuration.workSeconds.timerText) work · \(entry.configuration.restSeconds.timerText) rest")
                 .foregroundStyle(.secondary)
-            Text("\(entry.configuration.repetitions.counted("gentagelse", "gentagelser")) · \(entry.configuration.rounds.counted("runde", "runder"))")
+            Text(verbatim: "\(entry.configuration.repetitions.repetitionCountText) · \(entry.configuration.rounds.roundCountText)")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -68,16 +68,16 @@ private struct HistoryDetailView: View {
 
     var body: some View {
         List {
-            Section("Træning") {
-                LabeledContent("Arbejde", value: entry.configuration.workSeconds.timerText)
-                LabeledContent("Hvile", value: entry.configuration.restSeconds.timerText)
-                LabeledContent("Gentagelser", value: "\(entry.configuration.repetitions)")
-                LabeledContent("Runder", value: "\(entry.configuration.rounds)")
-                LabeledContent("Ekstra rundepause", value: entry.configuration.roundRestSeconds.timerText)
+            Section("Workout") {
+                LabeledContent("Work", value: entry.configuration.workSeconds.timerText)
+                LabeledContent("Rest", value: entry.configuration.restSeconds.timerText)
+                LabeledContent("Reps", value: "\(entry.configuration.repetitions)")
+                LabeledContent("Rounds", value: "\(entry.configuration.rounds)")
+                LabeledContent("Extra round break", value: entry.configuration.roundRestSeconds.timerText)
             }
 
             Section {
-                Button("Brug disse indstillinger", systemImage: "arrow.down.doc", action: onLoad)
+                Button("Use these settings", systemImage: "arrow.down.doc", action: onLoad)
             }
         }
         .navigationTitle(entry.completedAt.formatted(date: .abbreviated, time: .omitted))

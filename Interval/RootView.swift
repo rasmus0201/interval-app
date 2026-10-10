@@ -36,7 +36,7 @@ struct RootView: View {
                 )
             }
             .tabItem {
-                Label("Træning", systemImage: "figure.run")
+                Label("Workout", systemImage: "figure.run")
             }
             .tag(Tab.workout)
 
@@ -45,7 +45,7 @@ struct RootView: View {
                 selectedTab = .workout
             }
             .tabItem {
-                Label("Historik", systemImage: "chart.bar.fill")
+                Label("History", systemImage: "chart.bar.fill")
             }
             .tag(Tab.history)
         }

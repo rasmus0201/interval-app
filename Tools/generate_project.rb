@@ -3,6 +3,7 @@ require "xcodeproj"
 project = Xcodeproj::Project.new("Interval.xcodeproj")
 project.root_object.attributes["LastSwiftUpdateCheck"] = "2630"
 project.root_object.attributes["LastUpgradeCheck"] = "2630"
+project.root_object.known_regions = ["en", "da", "Base"]
 
 app_target = project.new_target(:application, "Interval", :ios, "17.0")
 test_target = project.new_target(:unit_test_bundle, "IntervalTests", :ios, "17.0")
@@ -19,7 +20,7 @@ test_group = project.main_group.new_group("IntervalTests", "IntervalTests")
 widget_group = project.main_group.new_group("IntervalWidgets", "IntervalWidgets")
 
 source_paths = Dir.glob("Interval/*.swift").sort
-resource_paths = ["Interval/Assets.xcassets", "Interval/PrivacyInfo.xcprivacy"] + Dir.glob("Interval/Sounds/*.wav").sort
+resource_paths = ["Interval/Assets.xcassets", "Interval/Localizable.xcstrings", "Interval/PrivacyInfo.xcprivacy"] + Dir.glob("Interval/Sounds/*.wav").sort
 test_paths = Dir.glob("IntervalTests/*.swift").sort
 widget_paths = Dir.glob("IntervalWidgets/*.swift").sort
 
@@ -47,6 +48,8 @@ shared_activity_reference = widget_group.new_file("../Interval/WorkoutActivityAt
 widget_target.source_build_phase.add_file_reference(shared_activity_reference)
 shared_activity_content_reference = widget_group.new_file("../Interval/WorkoutLiveActivityContent.swift")
 widget_target.source_build_phase.add_file_reference(shared_activity_content_reference)
+shared_strings_reference = widget_group.new_file("../Interval/Localizable.xcstrings")
+widget_target.resources_build_phase.add_file_reference(shared_strings_reference)
 
 project.build_configurations.each do |configuration|
   configuration.build_settings["APP_BUNDLE_ID"] = "com.bundsgaard.kyclaro"

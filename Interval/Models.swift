@@ -11,6 +11,11 @@ struct WorkoutConfiguration: Codable, Equatable, Hashable {
         repetitions * rounds
     }
 
+    var summaryText: String {
+        let intervals = String(localized: "\(workIntervalCount) work intervals")
+        return "\(intervals) · \(durationWithoutWarmup.shortDurationText)"
+    }
+
     var durationWithoutWarmup: Int {
         let work = workSeconds * repetitions * rounds
         let breaksBetweenRounds = (restSeconds + roundRestSeconds) * max(rounds - 1, 0)
@@ -29,10 +34,10 @@ struct AppSettings: Codable, Equatable {
 
         var title: String {
             switch self {
-            case .silent: "Lydløs"
-            case .vibration: "Vibration"
-            case .tones: "Biptoner"
-            case .tonesAndVibration: "Bip + vibration"
+            case .silent: String(localized: "Silent")
+            case .vibration: String(localized: "Vibration")
+            case .tones: String(localized: "Beeps")
+            case .tonesAndVibration: String(localized: "Beeps + vibration")
             }
         }
 
@@ -115,10 +120,10 @@ enum WorkoutPhase: String, Codable, Equatable {
 
     var title: String {
         switch self {
-        case .warmup: "Gør klar"
-        case .work: "Arbejde"
-        case .rest: "Hvile"
-        case .roundRest: "Rundepause"
+        case .warmup: String(localized: "Get ready")
+        case .work: String(localized: "Work")
+        case .rest: String(localized: "Rest")
+        case .roundRest: String(localized: "Round break")
         }
     }
 
@@ -178,10 +183,12 @@ extension Int {
 
     var shortDurationText: String {
         if self < 60 {
-            return "\(self) sek"
+            return String(localized: "\(self) sec")
         }
         let minutes = self / 60
         let seconds = self % 60
-        return seconds == 0 ? "\(minutes) min" : "\(minutes) min \(seconds) sek"
+        return seconds == 0
+            ? String(localized: "\(minutes) min")
+            : String(localized: "\(minutes) min \(seconds) sec")
     }
 }
