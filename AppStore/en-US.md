@@ -84,11 +84,29 @@ Select **No, we do not collect data from this app**. The app stores settings and
 
 ## App Review Notes
 
-The app is a standalone interval timer with no login and no network features.
+Paste this into the Notes field under App Review Information. Attach a fresh screen recording from a physical iPhone running the latest iOS, starting with launching the app, when Apple asks for one.
 
-Start a workout from the Workout tab, or with the "Start Workout" shortcut in the Shortcuts app. During an active workout, the app uses an audio session to play time-critical phase signals, including when the screen is locked or the Silent switch is on. Optional spoken cues (Settings > Spoken cues, off by default) use on-device speech synthesis through the same audio session. The volume follows the device's media volume and the app's relative volume setting. The active workout is also shown as a Live Activity on the Lock Screen and in the Dynamic Island.
+**Purpose and target audience**
+Kyclaro Timer is an interval timer for people who do HIIT, Tabata, circuit training and other timed workouts. You set work time, rest time, reps, rounds and an optional break between rounds, then start the workout. The problem it solves is following intervals without looking at the phone: phase changes are signalled with sound, vibration and optional spoken cues, also while the screen is locked. A Live Activity shows progress on the Lock Screen and in the Dynamic Island.
 
-Workout history and settings are stored only on the device. No demo account is required.
+**Setup and main features**
+No account, login or sample files are needed.
+- Workout tab: set work, rest, reps, rounds and the extra round break, then tap "Start workout".
+- During a workout: pause, resume, skip or restart. Lock the phone to see the Live Activity and hear the cues.
+- History tab: finished workouts are saved on the device and can be loaded again.
+- Settings (gear icon): warm-up countdown, beeps and volume, vibration, and spoken cues (off by default).
+- Siri and Shortcuts: "Start my interval workout in Kyclaro", or the "Start Workout" shortcut in the Shortcuts app, starts the most recent setup.
+
+During an active workout, the app keeps an audio session active so time-critical cues play while the screen is locked or the Silent switch is on. The session ends when the workout ends. Spoken cues use on-device speech synthesis through the same session.
+
+**External services**
+None. The app uses only Apple frameworks (SwiftUI, AVFoundation, ActivityKit, WidgetKit, App Intents). It makes no network requests and has no analytics, ads, authentication or third-party SDKs. Settings and workout history are stored only on the device.
+
+**Regional differences**
+None. The app works the same in all regions. The interface is in English and Danish.
+
+**Regulated industry or third-party material**
+Not applicable. The app is not in a regulated industry and contains no third-party content. All sounds are generated for the app.
 
 ## Version 1.0 – What's New in This Version
 
