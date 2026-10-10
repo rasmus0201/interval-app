@@ -6,33 +6,58 @@
 
 ## Undertitel
 
-`Enkle intervaller til træning`
+`HIIT- og Tabata-træning`
+
+## Reklametekst
+
+`Fokusér på træningen, ikke på telefonen. Indstil dine intervaller, følg tydelige lyd-, vibrations- og talesignaler, og se din træning direkte på låseskærmen.`
 
 ## Beskrivelse
 
-Byg din intervaltræning på få sekunder. Vælg øvelsestid, antal gentagelser, hviletid og runder. Start træningen, læg telefonen i lommen, og følg skiftene med tydelige lyd- og vibrationssignaler.
+Din træning. Dit tempo. Din timer.
 
-Kyclaro viser den aktive træning på låseskærmen og i Dynamic Island. Timeren fortsætter, når skærmen er låst, så du kan holde fokus på træningen.
+Kyclaro er en enkel intervaltimer, der holder dig i gang. Uanset om du laver HIIT, Tabata, cirkeltræning eller din egen rutine, får Kyclaro hvert sekund til at tælle.
 
-Funktioner:
+Indstil dine intervaller på få sekunder, tryk start, og fokusér på det vigtigste: din træning.
 
-- Indstil øvelsestid og hviletid i minutter og sekunder.
-- Vælg antal gentagelser pr. runde og antal runder.
-- Tilføj en valgfri pause mellem runder.
-- Vælg en startnedtælling på 0, 10, 30 eller 60 sekunder.
-- Brug lyd, vibration eller begge dele.
-- Slå talte beskeder til, som annoncerer øvelse, hvile, nye runder og de sidste 10 sekunder.
-- Tilpas signalernes lydstyrke i forhold til telefonens medielydstyrke.
-- Se tid og fremdrift på låseskærmen.
-- Start din seneste træning med Siri, appen Genveje eller Action-knappen.
-- Gem afsluttede træninger lokalt, og indlæs dem igen.
-- Brug appen uden konto og internetforbindelse.
+BYG DIN EGEN TRÆNING
 
-Appen indsamler ikke personoplysninger og viser ikke reklamer.
+• Vælg din egen øvelsestid og hviletid
+• Vælg antal gentagelser og runder
+• Tilføj en valgfri pause mellem runder
+• Indstil en nedtælling, før du starter
+• Se den samlede træningstid, før du går i gang
+
+HOLD FOKUS, OGSÅ MED LÅST SKÆRM
+
+Du behøver ikke kigge på telefonen hele tiden.
+
+• Tydelige lydsignaler ved hvert skift
+• Vibration ved øvelse og hvile
+• Valgfrie talte beskeder ved øvelse, hvile, nye runder og de sidste 10 sekunder
+• Live Activity på låseskærmen og i Dynamic Island
+• En stor nedtælling, der er let at læse
+
+ALT DU HAR BRUG FOR. INTET DU IKKE HAR.
+
+• Sæt på pause, fortsæt, spring over eller start forfra
+• Se dine gennemførte træninger
+• Gentag tidligere træninger med ét tryk
+• Start din seneste træning med Siri, Genveje eller Action-knappen
+• Tilpas lyd, vibration og lydstyrke, som du vil have det
+• Virker offline, uden konto, reklamer eller dataindsamling
+
+LAVET TIL DIN MÅDE AT TRÆNE PÅ
+
+Perfekt til HIIT, Tabata, cirkeltræning, styrketræning, cardio, boksning og alt andet, der bygger på tidsintervaller.
+
+Ingen besværlig opsætning. Ingen forstyrrelser. Bare en pålidelig timer, der holder trit med dig.
+
+Mindre trykken. Mere træning.
 
 ## Nøgleord
 
-`interval,timer,træning,workout,tabata,hiit,runder,gentagelser,stopur,fitness`
+`interval,cirkeltræning,træning,fitness,motion,runder,hvile,stopur,cardio,gym,sæt,sekunder,boksning`
 
 ## Kategori
 

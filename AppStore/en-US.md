@@ -6,33 +6,58 @@
 
 ## Subtitle
 
-`Simple interval workouts`
+`HIIT & Tabata Workouts`
+
+## Promotional Text
+
+`Stay focused on your workout, not your phone. Set your intervals, follow clear sound, vibration and spoken cues, and track your session right from your Lock Screen.`
 
 ## Description
 
-Build your interval workout in seconds. Choose your work time, number of reps, rest time and rounds. Start the workout, put your phone in your pocket, and follow every switch with clear sound and vibration signals.
+Your workout. Your pace. Your timer.
 
-Kyclaro shows the active workout on the Lock Screen and in the Dynamic Island. The timer keeps running when the screen is locked, so you can stay focused on your training.
+Kyclaro is a simple interval timer designed to keep you moving. Whether you're doing HIIT, Tabata, circuit training or your own routine, Kyclaro makes every second count.
 
-Features:
+Set up your intervals in seconds, hit start, and focus on what matters: your workout.
 
-- Set work and rest times in minutes and seconds.
-- Choose the number of reps per round and the number of rounds.
-- Add an optional extra break between rounds.
-- Pick a warm-up countdown of 0, 10, 30 or 60 seconds.
-- Use beeps, vibration or both.
-- Turn on spoken cues that announce work, rest, new rounds and the last 10 seconds.
-- Adjust the signal volume relative to your phone's media volume.
-- See time and progress on the Lock Screen.
-- Start your most recent workout with Siri, the Shortcuts app or the Action button.
-- Save finished workouts on your device and load them again.
-- Use the app without an account or an internet connection.
+BUILD YOUR OWN WORKOUT
 
-The app does not collect personal data and shows no ads.
+• Set custom work and rest durations
+• Choose reps and rounds
+• Add an optional break between rounds
+• Set a get-ready countdown
+• See the total workout time before you start
+
+STAY FOCUSED, EVEN WITH YOUR SCREEN LOCKED
+
+No need to keep checking your phone.
+
+• Clear sound cues at every switch
+• Vibration feedback for work and rest
+• Optional spoken cues for work, rest, new rounds and the last 10 seconds
+• Live Activities on your Lock Screen and in the Dynamic Island
+• A large, easy-to-read countdown
+
+EVERYTHING YOU NEED. NOTHING YOU DON'T.
+
+• Pause, resume, skip or restart intervals
+• Review your completed workouts
+• Repeat previous sessions with one tap
+• Start your latest workout with Siri, Shortcuts or the Action button
+• Adjust sound, vibration and volume to your liking
+• Works offline, with no account, no ads and no data collection
+
+MADE FOR THE WAY YOU TRAIN
+
+Perfect for HIIT, Tabata, circuit training, strength workouts, cardio, boxing and anything built around timed intervals.
+
+No complicated setup. No distractions. Just a reliable timer that keeps up with you.
+
+Less tapping. More training.
 
 ## Keywords
 
-`interval,workout,hiit,tabata,training,circuit,rounds,reps,exercise,fitness,boxing,emom,stopwatch`
+`interval,circuit,training,fitness,exercise,rounds,rest,stopwatch,cardio,gym,sets,seconds,boxing`
 
 ## Category
 
