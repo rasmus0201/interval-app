@@ -3,7 +3,7 @@
 ## Før arkivering
 
 - Kontroller, at appnavnet Kyclaro er tilgængeligt i App Store Connect.
-- Erstat `APP_BUNDLE_ID` i projektets Build Settings med et entydigt ID, som udgiveren ejer.
+- Bundle-ID er `com.oliverkaersner.kyclaro`, og projektet signeres med Oliver Kærsner-teamet (`QT5WT5HVRX`).
 - Vælg udgiverens Apple Developer-team for app- og widget-targets i Xcode.
 - Opdater udgiverens juridiske navn i `AppStore/en-US.md` og `AppStore/da-DK.md`.
 - Publicer `docs/` med GitHub Pages, og kontroller alle seks webadresser: de engelske sider i roden og de danske sider under `da/`.

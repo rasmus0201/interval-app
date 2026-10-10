@@ -12,7 +12,7 @@ Kyclaro combines the Greek *kyklos* (cycle) with *claro* (clear). The name refle
 2. Select an iPhone simulator.
 3. Run the `Interval` scheme.
 
-The default bundle identifier is `com.bundsgaard.kyclaro`. Change `APP_BUNDLE_ID` once in the project Build Settings before another Apple Developer account publishes the app. The app, tests, and widget derive their identifiers from this value. No development team is stored in the project.
+The bundle identifier is `com.oliverkaersner.kyclaro`, and the project signs with the Oliver Kærsner team (`QT5WT5HVRX`). The app, tests, and widget derive their identifiers from the shared `APP_BUNDLE_ID` build setting.
 
 ## Lock-screen timing
 

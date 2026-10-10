@@ -52,7 +52,7 @@ shared_strings_reference = widget_group.new_file("../Interval/Localizable.xcstri
 widget_target.resources_build_phase.add_file_reference(shared_strings_reference)
 
 project.build_configurations.each do |configuration|
-  configuration.build_settings["APP_BUNDLE_ID"] = "com.bundsgaard.kyclaro"
+  configuration.build_settings["APP_BUNDLE_ID"] = "com.oliverkaersner.kyclaro"
   configuration.build_settings["MARKETING_VERSION"] = "1.0"
   configuration.build_settings["CURRENT_PROJECT_VERSION"] = "1"
 end
@@ -64,7 +64,7 @@ app_target.build_configurations.each do |configuration|
   configuration.build_settings["ASSETCATALOG_COMPILER_APPICON_NAME"] = "AppIcon"
   configuration.build_settings["ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME"] = "AccentColor"
   configuration.build_settings["CODE_SIGN_STYLE"] = "Automatic"
-  configuration.build_settings["DEVELOPMENT_TEAM"] = ""
+  configuration.build_settings["DEVELOPMENT_TEAM"] = "QT5WT5HVRX"
   configuration.build_settings["SWIFT_VERSION"] = "5.0"
   configuration.build_settings["TARGETED_DEVICE_FAMILY"] = "1"
 end
@@ -73,7 +73,7 @@ test_target.build_configurations.each do |configuration|
   configuration.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "$(APP_BUNDLE_ID).tests"
   configuration.build_settings["GENERATE_INFOPLIST_FILE"] = "YES"
   configuration.build_settings["CODE_SIGN_STYLE"] = "Automatic"
-  configuration.build_settings["DEVELOPMENT_TEAM"] = ""
+  configuration.build_settings["DEVELOPMENT_TEAM"] = "QT5WT5HVRX"
   configuration.build_settings["SWIFT_VERSION"] = "5.0"
   configuration.build_settings["TEST_HOST"] = "$(BUILT_PRODUCTS_DIR)/Interval.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval"
   configuration.build_settings["BUNDLE_LOADER"] = "$(TEST_HOST)"
@@ -84,7 +84,7 @@ widget_target.build_configurations.each do |configuration|
   configuration.build_settings["INFOPLIST_FILE"] = "IntervalWidgets/Info.plist"
   configuration.build_settings["GENERATE_INFOPLIST_FILE"] = "NO"
   configuration.build_settings["CODE_SIGN_STYLE"] = "Automatic"
-  configuration.build_settings["DEVELOPMENT_TEAM"] = ""
+  configuration.build_settings["DEVELOPMENT_TEAM"] = "QT5WT5HVRX"
   configuration.build_settings["SWIFT_VERSION"] = "5.0"
   configuration.build_settings["TARGETED_DEVICE_FAMILY"] = "1"
   configuration.build_settings["APPLICATION_EXTENSION_API_ONLY"] = "YES"

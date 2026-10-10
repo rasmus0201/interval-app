@@ -5,7 +5,7 @@ set -eu
 
 DEVICES="${DEVICES:-large:iPhone 17 Pro Max
 medium:iPhone 17 Pro}"
-BUNDLE_ID="com.bundsgaard.kyclaro"
+BUNDLE_ID="com.oliverkaersner.kyclaro"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$ROOT/AppStore/Screenshots"
 DERIVED="$(mktemp -d)"
