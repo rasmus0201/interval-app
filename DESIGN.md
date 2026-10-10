@@ -35,7 +35,7 @@ Kyclaro uses the quiet visual discipline of an athletics timing board. The inter
 
 ## Navigation
 
-- Use two top-level tabs: Træning and Historik.
+- Use two top-level tabs: Workout and History.
 - Use a navigation stack for settings and history detail.
 - Present the active workout as a full-screen cover to protect focus.
 
@@ -46,7 +46,7 @@ Kyclaro uses the quiet visual discipline of an athletics timing board. The inter
 - The active workout keeps phase, countdown, progress, reset, pause, and skip visible in one full-screen surface.
 - At accessibility text sizes, pause and skip use labeled symbols to preserve the countdown area and VoiceOver names.
 - History rows show the completion date and configuration. A detail view can load the same configuration into setup.
-- Settings separate tones, tone volume, and vibration into native controls.
+- Settings separate tones, tone volume, vibration, and spoken cues into native controls.
 - A Live Activity keeps the total workout countdown and workout structure visible on the Lock Screen and in the Dynamic Island.
 
 ## Review

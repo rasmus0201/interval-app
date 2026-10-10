@@ -18,6 +18,7 @@ final class WorkoutEngine: ObservableObject {
     private var didStart = false
     private var didComplete = false
     private var lastCountdownCue: Int?
+    private var spokenCues: SpokenCueTracker
 
     init(configuration: WorkoutConfiguration, settings: AppSettings) {
         self.configuration = configuration
@@ -27,6 +28,11 @@ final class WorkoutEngine: ObservableObject {
             startCountdownSeconds: settings.startCountdownSeconds
         )
         remainingSeconds = steps.first?.duration ?? 0
+        spokenCues = SpokenCueTracker(
+            steps: steps,
+            rounds: configuration.rounds,
+            isEnabled: settings.spokenCuesEnabled
+        )
     }
 
     var currentStep: WorkoutStep {
@@ -55,6 +61,7 @@ final class WorkoutEngine: ObservableObject {
         UIApplication.shared.isIdleTimerDisabled = true
         AudioCueService.shared.prepare()
         playTransitionCue(for: currentStep.phase, previousPhase: nil)
+        speak(spokenCues.cue(stepIndex: stepIndex, remainingSeconds: remainingSeconds))
         WorkoutLiveActivityService.shared.start(
             configuration: configuration,
             remainingSeconds: remainingDuration
@@ -76,6 +83,7 @@ final class WorkoutEngine: ObservableObject {
             pausedElapsed = elapsedSeconds
             isPaused = true
             stopTimer()
+            SpeechCueService.shared.stop()
             WorkoutLiveActivityService.shared.update(
                 remainingSeconds: remainingDuration,
                 isPaused: true
@@ -102,6 +110,7 @@ final class WorkoutEngine: ObservableObject {
         stopTimer()
         UIApplication.shared.isIdleTimerDisabled = false
         AudioCueService.shared.stop()
+        SpeechCueService.shared.stop()
         Task { await WorkoutLiveActivityService.shared.end() }
     }
 
@@ -116,7 +125,10 @@ final class WorkoutEngine: ObservableObject {
         pausedElapsed = 0
         anchorDate = .now
         lastCountdownCue = nil
+        spokenCues.reset()
+        SpeechCueService.shared.stop()
         playTransitionCue(for: steps[0].phase, previousPhase: nil)
+        speak(spokenCues.cue(stepIndex: stepIndex, remainingSeconds: remainingSeconds))
         WorkoutLiveActivityService.shared.update(
             remainingSeconds: remainingDuration,
             isPaused: false
@@ -173,6 +185,7 @@ final class WorkoutEngine: ObservableObject {
             playTransitionCue(for: steps[newIndex].phase, previousPhase: previousPhase)
         }
         remainingSeconds = newRemaining
+        speak(spokenCues.cue(stepIndex: stepIndex, remainingSeconds: newRemaining))
 
         if newRemaining <= 3, newRemaining > 0, lastCountdownCue != newRemaining {
             lastCountdownCue = newRemaining
@@ -201,6 +214,11 @@ final class WorkoutEngine: ObservableObject {
         )
     }
 
+    private func speak(_ cue: SpokenCue?) {
+        guard let cue else { return }
+        SpeechCueService.shared.speak(cue, afterTone: settings.tonesEnabled)
+    }
+
     private func complete() {
         didComplete = true
         isFinished = true
@@ -208,6 +226,7 @@ final class WorkoutEngine: ObservableObject {
         stopTimer()
         UIApplication.shared.isIdleTimerDisabled = false
         play(.complete)
+        speak(spokenCues.completionCue())
         Task { await WorkoutLiveActivityService.shared.end() }
     }
 }

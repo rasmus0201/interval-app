@@ -36,6 +36,8 @@ The user holds, props up, or keeps an iPhone locked in a pocket during a workout
 - Configure a global start countdown of 0, 10, 30, or 60 seconds.
 - Configure workout tones and vibration independently.
 - Configure tone volume relative to the phone's media volume.
+- Optionally announce work, rest, new rounds, and the last 10 seconds with spoken cues in English or Danish.
+- Start the most recent setup with Siri, Shortcuts, or the Action button.
 - Play distinct countdown tones when work starts, work ends, and rest ends.
 - Provide a short vibration or sound cue during the workout where useful.
 - Show the current phase, countdown, repetition, round, and progress.

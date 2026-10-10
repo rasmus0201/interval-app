@@ -10,6 +10,9 @@
 - Øg `CURRENT_PROJECT_VERSION` for hver upload til App Store Connect.
 - Test en Release-build på mindst én fysisk iPhone med låst skærm.
 - Kontroller lyd, vibration, Live Activity og afslutning af en fuld træning.
+- Kontroller talte beskeder på dansk og engelsk, også med låst skærm, pause, spring over, genstart og stop.
+- Kontroller Siri-genvejen fra Siri, appen Genveje og Action-knappen, både når appen er lukket, og når en træning allerede kører.
+- Fjern talte beskeder og Siri fra metadata, hvis de ikke virker på en fysisk iPhone.
 
 ## App Store Connect
 
@@ -26,4 +29,4 @@
 
 ## Kendt kontrolpunkt
 
-Appen afspiller en stille lydsløjfe under en aktiv træning. Det holder lydsessionen aktiv, så fasesignaler virker på låseskærmen. Funktionen er central for appens brug i en lomme. Apple kan kontrollere brugen af baggrundslyd under App Review.
+Appen afspiller en stille lydsløjfe under en aktiv træning. Det holder lydsessionen aktiv, så fasesignaler virker på låseskærmen. Funktionen er central for appens brug i en lomme. Apple kan kontrollere brugen af baggrundslyd under App Review. Talte beskeder bruger den samme lydsession og tilføjer ingen ekstra baggrundsaktivitet. De er slået fra som standard, så de ændrer ikke appen for nuværende brugere.

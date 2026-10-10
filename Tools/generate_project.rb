@@ -20,7 +20,7 @@ test_group = project.main_group.new_group("IntervalTests", "IntervalTests")
 widget_group = project.main_group.new_group("IntervalWidgets", "IntervalWidgets")
 
 source_paths = Dir.glob("Interval/*.swift").sort
-resource_paths = ["Interval/Assets.xcassets", "Interval/Localizable.xcstrings", "Interval/PrivacyInfo.xcprivacy"] + Dir.glob("Interval/Sounds/*.wav").sort
+resource_paths = ["Interval/Assets.xcassets", "Interval/Localizable.xcstrings", "Interval/AppShortcuts.xcstrings", "Interval/PrivacyInfo.xcprivacy"] + Dir.glob("Interval/Sounds/*.wav").sort
 test_paths = Dir.glob("IntervalTests/*.swift").sort
 widget_paths = Dir.glob("IntervalWidgets/*.swift").sort
 

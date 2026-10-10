@@ -7,6 +7,7 @@ struct RootView: View {
     }
 
     @EnvironmentObject private var store: AppStore
+    @ObservedObject private var startRequests = WorkoutStartRequests.shared
     @State private var selectedTab = Tab.workout
     @State private var session: WorkoutSession?
 #if DEBUG
@@ -49,6 +50,10 @@ struct RootView: View {
             }
             .tag(Tab.history)
         }
+        .onAppear(perform: startRequestedWorkout)
+        .onChange(of: startRequests.hasPendingRequest) { _, isPending in
+            if isPending { startRequestedWorkout() }
+        }
         .fullScreenCover(item: $session) { session in
             WorkoutView(
                 configuration: session.configuration,
@@ -63,6 +68,12 @@ struct RootView: View {
 #if DEBUG
         .onAppear {
             let arguments = ProcessInfo.processInfo.arguments
+            if arguments.contains("--shortcut-start-test") {
+                Task {
+                    try? await Task.sleep(for: .seconds(2))
+                    WorkoutStartRequests.shared.request()
+                }
+            }
             if arguments.contains("--screenshot-history") {
                 selectedTab = .history
             }
@@ -78,6 +89,17 @@ struct RootView: View {
             session = Self.liveActivityTestSession
         }
 #endif
+    }
+
+    private func startRequestedWorkout() {
+        guard startRequests.consume(),
+              let requestedSession = WorkoutSession.requested(
+                  activeSession: session,
+                  configuration: store.configuration,
+                  settings: store.settings
+              ) else { return }
+        selectedTab = .workout
+        session = requestedSession
     }
 
 #if DEBUG
@@ -127,8 +149,18 @@ private struct LiveActivityLayoutTestView: View {
 }
 #endif
 
-private struct WorkoutSession: Identifiable {
+struct WorkoutSession: Identifiable {
     let id = UUID()
     let configuration: WorkoutConfiguration
     let settings: AppSettings
+
+    /// A shortcut never replaces or runs alongside a session that is already on screen.
+    static func requested(
+        activeSession: WorkoutSession?,
+        configuration: WorkoutConfiguration,
+        settings: AppSettings
+    ) -> WorkoutSession? {
+        guard activeSession == nil else { return nil }
+        return WorkoutSession(configuration: configuration, settings: settings)
+    }
 }

@@ -43,6 +43,14 @@ struct SettingsView: View {
                 Section("Vibration") {
                     Toggle("Vibration", isOn: $store.settings.vibrationEnabled)
                 }
+
+                Section {
+                    Toggle("Spoken cues", isOn: $store.settings.spokenCuesEnabled)
+                } header: {
+                    Text("Speech")
+                } footer: {
+                    Text("Announces work, rest, new rounds and 10 seconds remaining.")
+                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)

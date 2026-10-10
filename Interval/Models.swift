@@ -62,6 +62,7 @@ struct AppSettings: Codable, Equatable {
     var startCountdownSeconds = 10
     var feedback = Feedback.tones
     var cueVolume = 1.0
+    var spokenCuesEnabled = false
 
     var tonesEnabled: Bool {
         get { feedback.usesTones }
@@ -77,6 +78,7 @@ struct AppSettings: Codable, Equatable {
         case startCountdownSeconds
         case feedback
         case cueVolume
+        case spokenCuesEnabled
     }
 
     init() {}
@@ -86,6 +88,7 @@ struct AppSettings: Codable, Equatable {
         startCountdownSeconds = try container.decodeIfPresent(Int.self, forKey: .startCountdownSeconds) ?? 10
         feedback = try container.decodeIfPresent(Feedback.self, forKey: .feedback) ?? .tones
         cueVolume = try container.decodeIfPresent(Double.self, forKey: .cueVolume) ?? 1
+        spokenCuesEnabled = try container.decodeIfPresent(Bool.self, forKey: .spokenCuesEnabled) ?? false
     }
 }
 

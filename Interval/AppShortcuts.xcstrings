@@ -1,0 +1,26 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "Start my interval workout in ${applicationName}": {
+      "localizations": {
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start min intervaltræning i ${applicationName}"
+          }
+        }
+      }
+    },
+    "Start an interval workout with ${applicationName}": {
+      "localizations": {
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start en intervaltræning med ${applicationName}"
+          }
+        }
+      }
+    }
+  }
+}

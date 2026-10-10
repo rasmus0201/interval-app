@@ -21,8 +21,10 @@ Features:
 - Add an optional extra break between rounds.
 - Pick a warm-up countdown of 0, 10, 30 or 60 seconds.
 - Use beeps, vibration or both.
+- Turn on spoken cues that announce work, rest, new rounds and the last 10 seconds.
 - Adjust the signal volume relative to your phone's media volume.
 - See time and progress on the Lock Screen.
+- Start your most recent workout with Siri, the Shortcuts app or the Action button.
 - Save finished workouts on your device and load them again.
 - Use the app without an account or an internet connection.
 
@@ -59,10 +61,10 @@ Select **No, we do not collect data from this app**. The app stores settings and
 
 The app is a standalone interval timer with no login and no network features.
 
-Start a workout from the Workout tab. During an active workout, the app uses an audio session to play time-critical phase signals, including when the screen is locked or the Silent switch is on. The volume follows the device's media volume and the app's relative volume setting. The active workout is also shown as a Live Activity on the Lock Screen and in the Dynamic Island.
+Start a workout from the Workout tab, or with the "Start Workout" shortcut in the Shortcuts app. During an active workout, the app uses an audio session to play time-critical phase signals, including when the screen is locked or the Silent switch is on. Optional spoken cues (Settings > Spoken cues, off by default) use on-device speech synthesis through the same audio session. The volume follows the device's media volume and the app's relative volume setting. The active workout is also shown as a Live Activity on the Lock Screen and in the Dynamic Island.
 
 Workout history and settings are stored only on the device. No demo account is required.
 
 ## Version 1.0 – What's New in This Version
 
-The first version of Kyclaro, with configurable workout intervals, sound and vibration, history and Live Activities.
+The first version of Kyclaro, with configurable workout intervals, sound, vibration and spoken cues, history, Live Activities and a Siri shortcut.

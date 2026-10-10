@@ -16,7 +16,11 @@ The default bundle identifier is `com.bundsgaard.kyclaro`. Change `APP_BUNDLE_ID
 
 ## Lock-screen timing
 
-The app keeps an audio session active during a workout. Phase cues therefore play while the screen is locked and when the silent switch is enabled, as long as media volume is audible. A Live Activity shows the current phase, countdown, round, and repetition on the Lock Screen and in the Dynamic Island. The timer uses absolute elapsed time, so it catches up correctly after the app returns to the foreground.
+The app keeps an audio session active during a workout. Phase cues therefore play while the screen is locked and when the silent switch is enabled, as long as media volume is audible. Optional spoken cues use `AVSpeechSynthesizer` through the same audio session; they are off by default and fall back to the system voice when no voice for the app's language is installed. A Live Activity shows the current phase, countdown, round, and repetition on the Lock Screen and in the Dynamic Island. The timer uses absolute elapsed time, so it catches up correctly after the app returns to the foreground.
+
+## Siri and Shortcuts
+
+The `Start Workout` App Intent opens the app and starts the most recently saved setup through the normal workout screen. It does nothing when a workout is already open. The phrases are "Start my interval workout in Kyclaro" and "Start min intervaltræning i Kyclaro", localized in `Interval/AppShortcuts.xcstrings`. The same shortcut can be used from the Shortcuts app and the Action button.
 
 ## Generated project files
 

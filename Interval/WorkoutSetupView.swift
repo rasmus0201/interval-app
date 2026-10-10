@@ -3,6 +3,7 @@ import SwiftUI
 struct WorkoutSetupView: View {
     @EnvironmentObject private var store: AppStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @ObservedObject private var startRequests = WorkoutStartRequests.shared
     @State private var showsSettings = false
 
     let onStart: () -> Void
@@ -73,6 +74,9 @@ struct WorkoutSetupView: View {
             }
             .sheet(isPresented: $showsSettings) {
                 SettingsView()
+            }
+            .onChange(of: startRequests.hasPendingRequest) { _, isPending in
+                if isPending { showsSettings = false }
             }
         }
     }
