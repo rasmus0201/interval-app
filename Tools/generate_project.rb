@@ -54,7 +54,7 @@ widget_target.resources_build_phase.add_file_reference(shared_strings_reference)
 project.build_configurations.each do |configuration|
   configuration.build_settings["APP_BUNDLE_ID"] = "com.oliverkaersner.kyclaro"
   configuration.build_settings["MARKETING_VERSION"] = "1.0"
-  configuration.build_settings["CURRENT_PROJECT_VERSION"] = "1"
+  configuration.build_settings["CURRENT_PROJECT_VERSION"] = "2"
 end
 
 app_target.build_configurations.each do |configuration|
