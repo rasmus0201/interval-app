@@ -22,7 +22,7 @@
 - Angiv privatlivspolitikkens webadresse for hvert sprog, og svar, at appen ikke indsamler data.
 - Angiv kategorierne Sundhed og fitness samt Hjælpeværktøjer.
 - Udfyld aldersvurderingen.
-- Upload skærmbillederne for hvert sprog fra `AppStore/Screenshots/en-US` og `AppStore/Screenshots/da-DK`. De viser opsætning, aktiv træning og historik. Kør `Tools/capture_screenshots.sh` for at tage dem igen.
+- Upload skærmbillederne for hvert sprog og hver skærmstørrelse fra `AppStore/Screenshots/<sprog>/large` (6,9", 1320 × 2868) og `AppStore/Screenshots/<sprog>/medium` (6,3", 1206 × 2622). De viser opsætning, aktiv træning og historik. Kør `Tools/capture_screenshots.sh` for at tage dem igen.
 - Indsæt App Review-noterne om baggrundslyd og Live Activity fra `AppStore/en-US.md`.
 - Upload arkivet fra Xcode Organizer.
 - Vælg buildet, og send det til App Review.

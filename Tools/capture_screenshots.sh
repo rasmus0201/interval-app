@@ -1,25 +1,18 @@
 #!/bin/sh
-# Captures App Store screenshots (6.9" iPhone) in English and Danish into AppStore/Screenshots.
+# Captures App Store screenshots in English and Danish into AppStore/Screenshots/<locale>/<size>.
+# large is the 6.9" display (1320 x 2868) and medium the 6.3" display (1206 x 2622), both with a Dynamic Island.
 set -eu
 
-DEVICE_NAME="${DEVICE_NAME:-iPhone 17 Pro Max}"
+DEVICES="${DEVICES:-large:iPhone 17 Pro Max
+medium:iPhone 17 Pro}"
 BUNDLE_ID="com.bundsgaard.kyclaro"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$ROOT/AppStore/Screenshots"
 DERIVED="$(mktemp -d)"
 
-UDID="$(xcrun simctl list devices available | grep "    $DEVICE_NAME (" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')"
-[ -n "$UDID" ] || { echo "Simulator '$DEVICE_NAME' not found" >&2; exit 1; }
-
-xcrun simctl boot "$UDID" 2>/dev/null || true
-xcrun simctl bootstatus "$UDID" >/dev/null
-xcrun simctl ui "$UDID" appearance dark
-xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState discharging --batteryLevel 100 \
-    --cellularBars 4 --wifiBars 3 --dataNetwork wifi
-
 xcodebuild -project "$ROOT/Interval.xcodeproj" -scheme Interval -configuration Debug \
-    -destination "id=$UDID" -derivedDataPath "$DERIVED" build -quiet
-xcrun simctl install "$UDID" "$DERIVED/Build/Products/Debug-iphonesimulator/Interval.app"
+    -destination "generic/platform=iOS Simulator" -derivedDataPath "$DERIVED" build -quiet
+APP="$DERIVED/Build/Products/Debug-iphonesimulator/Interval.app"
 
 # Sample history passed through the UserDefaults argument domain; nothing is persisted.
 HISTORY="$(python3 - <<'EOF'
@@ -47,22 +40,35 @@ EOF
 
 capture() {
     folder="$1"; language="$2"; locale="$3"; name="$4"; delay="$5"; shift 5
-    mkdir -p "$OUT/$folder"
+    mkdir -p "$OUT/$folder/$SIZE"
     xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
     xcrun simctl launch "$UDID" "$BUNDLE_ID" -AppleLanguages "($language)" -AppleLocale "$locale" \
         -workoutHistory "$HISTORY" "$@" >/dev/null
     sleep "$delay"
-    xcrun simctl io "$UDID" screenshot "$OUT/$folder/$name.png" >/dev/null
-    echo "Saved $OUT/$folder/$name.png"
+    xcrun simctl io "$UDID" screenshot "$OUT/$folder/$SIZE/$name.png" >/dev/null
+    echo "Saved $OUT/$folder/$SIZE/$name.png"
 }
 
-for target in "en-US en en_US" "da-DK da da_DK"; do
-    set -- $target
-    capture "$@" 01-setup 3
-    capture "$@" 02-workout 5 --screenshot-workout
-    capture "$@" 03-history 3 --screenshot-history
+echo "$DEVICES" | while IFS=: read -r SIZE DEVICE_NAME; do
+    UDID="$(xcrun simctl list devices available | grep "    $DEVICE_NAME (" | head -1 | sed -E 's/.*\(([0-9A-F-]+)\).*/\1/')"
+    [ -n "$UDID" ] || { echo "Simulator '$DEVICE_NAME' not found" >&2; exit 1; }
+
+    xcrun simctl boot "$UDID" 2>/dev/null || true
+    xcrun simctl bootstatus "$UDID" >/dev/null
+    xcrun simctl ui "$UDID" appearance "${APPEARANCE:-light}"
+    xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState discharging --batteryLevel 100 \
+        --cellularBars 4 --wifiBars 3 --dataNetwork wifi
+    xcrun simctl install "$UDID" "$APP"
+
+    for target in "en-US en en_US" "da-DK da da_DK"; do
+        set -- $target
+        capture "$@" 01-setup 3
+        capture "$@" 02-workout 5 --screenshot-workout
+        capture "$@" 03-history 3 --screenshot-history
+    done
+
+    xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
+    xcrun simctl status_bar "$UDID" clear
 done
 
-xcrun simctl terminate "$UDID" "$BUNDLE_ID" 2>/dev/null || true
-xcrun simctl status_bar "$UDID" clear
 rm -rf "$DERIVED"

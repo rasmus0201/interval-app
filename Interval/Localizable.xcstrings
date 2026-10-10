@@ -6,7 +6,7 @@
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ arbejde · %@ hvile"
+            "value": "%@ øvelse · %@ hvile"
           }
         }
       }
@@ -193,13 +193,13 @@
               "one": {
                 "stringUnit": {
                   "state": "translated",
-                  "value": "%lld arbejdsinterval"
+                  "value": "%lld øvelse"
                 }
               },
               "other": {
                 "stringUnit": {
                   "state": "translated",
-                  "value": "%lld arbejdsintervaller"
+                  "value": "%lld øvelser"
                 }
               }
             }
@@ -232,7 +232,7 @@
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Annoncerer arbejde, hvile, nye runder og 10 sekunder tilbage."
+            "value": "Annoncerer øvelse, hvile, nye runder og 10 sekunder tilbage."
           }
         }
       }
@@ -672,7 +672,7 @@
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Arbejde"
+            "value": "Øvelse"
           }
         }
       }
@@ -838,7 +838,7 @@
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Arbejde"
+            "value": "Øvelse"
           }
         }
       }

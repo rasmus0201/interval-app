@@ -10,18 +10,18 @@
 
 ## Beskrivelse
 
-Byg din intervaltræning på få sekunder. Vælg arbejdstid, antal gentagelser, hviletid og runder. Start træningen, læg telefonen i lommen, og følg skiftene med tydelige lyd- og vibrationssignaler.
+Byg din intervaltræning på få sekunder. Vælg øvelsestid, antal gentagelser, hviletid og runder. Start træningen, læg telefonen i lommen, og følg skiftene med tydelige lyd- og vibrationssignaler.
 
 Kyclaro viser den aktive træning på låseskærmen og i Dynamic Island. Timeren fortsætter, når skærmen er låst, så du kan holde fokus på træningen.
 
 Funktioner:
 
-- Indstil arbejdstid og hviletid i minutter og sekunder.
+- Indstil øvelsestid og hviletid i minutter og sekunder.
 - Vælg antal gentagelser pr. runde og antal runder.
 - Tilføj en valgfri pause mellem runder.
 - Vælg en startnedtælling på 0, 10, 30 eller 60 sekunder.
 - Brug lyd, vibration eller begge dele.
-- Slå talte beskeder til, som annoncerer arbejde, hvile, nye runder og de sidste 10 sekunder.
+- Slå talte beskeder til, som annoncerer øvelse, hvile, nye runder og de sidste 10 sekunder.
 - Tilpas signalernes lydstyrke i forhold til telefonens medielydstyrke.
 - Se tid og fremdrift på låseskærmen.
 - Start din seneste træning med Siri, appen Genveje eller Action-knappen.
